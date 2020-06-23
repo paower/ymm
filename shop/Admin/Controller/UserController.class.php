@@ -786,10 +786,42 @@ class UserController extends AdminController
 			}
 		}
 
+		//后台提现不通过
+		public function with_purch_no(){
+			$id = (int)I('id');
+			M()->startTrans();
+			$res = M('trans')->where("id = $id")->setField('pay_state',4);
+			$payout_id = M('trans')->where("id = $id")->getField('payout_id');
+			$pay_nums = M('trans')->where("id = $id")->getField('pay_nums');
+            $sell_type = M('trans')->where("id = $id")->getField('sell_type');
+			//手续费
+			if($sell_type == 1){
+            	$transfer_ratio = M('config')->where(array('name'=>'transfer_ratio'))->getField('value');
+			}elseif($sell_type == 2){
+				$transfer_ratio = M('config')->where(array('name'=>'cash2_ratio'))->getField('value');
+			}
+            $num = $pay_nums / $transfer_ratio;
+            if($sell_type == 1){
+            	$sqlname = 'cangku_num';
+            }elseif($sell_type == 2){
+            	$sqlname = 'cangku2_num';
+            }
+            $res2 = M('store')->where("uid = $payout_id")->setInc($sqlname,$num);
+            if($res !== false && $res2 !== false){
+            	M()->commit();
+            	echo "<meta http-equiv='Content-Type'' content='text/html; charset=utf-8'>";
+            	echo "<script>alert('订单不通过成功');location.href='".U('user/withdrawal')."';</script>";
+            }else{
+            	M()->rollback();
+            	echo "<meta http-equiv='Content-Type'' content='text/html; charset=utf-8'>";
+            	echo "<script>alert('订单不通过失败');location.href='".U('user/withdrawal')."';</script>";
+            }
+		}
 
 		/*
 		* 后台买入
 		*/
+
 
 		public function with_purch(){
 			if(IS_POST){

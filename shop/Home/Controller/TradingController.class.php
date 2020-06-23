@@ -117,6 +117,7 @@ class TradingController extends CommonController {
             $data['fee_nums'] = 100;
             $data['pay_time'] = time();
             $data['trans_type']=1;
+            $data['sell_type']=1;
             
             $res_Add = M('trans')->add($data);
 
@@ -201,6 +202,7 @@ class TradingController extends CommonController {
                 $data['fee_nums'] = 100;
                 $data['pay_time'] = time();
                 $data['trans_type']=1;
+                $data['sell_type']=2;
                 
                 $res_Add = M('trans')->add($data);
 

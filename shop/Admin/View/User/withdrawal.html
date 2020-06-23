@@ -87,6 +87,7 @@
                                                             <td>
                                                                 <if condition="$vo['pay_state'] eq 0">
                                                                 <a title="买入" target="_blank" id="examine" class="label label-primary-outline label-pill" href="/adminymm/user/with_purch/id/{$vo['id']}">买入</a>
+                                                                <a title="不通过" target="_blank" id="examine" class="label label-primary-outline label-pill" href="/adminymm/user/with_purch_no/id/{$vo['id']}">不通过</a>
                                                                 <elseif condition="$vo['pay_state'] eq 1"/>
                                                                   <a href="/adminymm/user/with_purch/id/{$vo['id']}">购买中</a>
                                                                 <elseif condition="$vo['pay_state'] eq 2"/>

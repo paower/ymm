@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--title>{$Think.lang.ucenter}</title-->
+<title>签到</title>
+<link rel="stylesheet" href="__WCSS__/style.css">
+<link rel="stylesheet" href="__WCSS__/meCen.css">
+
+<!--线上JQ包-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--本地JQ包-->
+<script type="text/javascript" src="__WJS__/jquery.glide.min.js"></script>
+<script type="text/javascript" src="__COM__/layer/layer.js"></script>
+<script type="text/javascript" src="__COM__/js/index.js"></script>
+<body class="bg96">
+<div class="signinsignin">		
+	<!-- 滚动公告 -->
+	<div  class="indexnews">
+		<span class="indexnews01"></span>
+		<img src="__WIMG__/index/idnews.png" alt=""/>
+		<div id="callboard">
+			<ul>
+				<foreach name="newinfo" item="v">
+					<li><span class="inewscon"><a href="{:U('User/Newsdetail',array('nid'=>$v['id']))}" >{$v['title']}</a></span></li>
+				</foreach>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<!-- <div class="signincenter"> -->
+			<!-- <a href="###" onclick="is_sign()"><img src="__WIMG__/index/sgignn.gif" /></a> -->
+		<!-- </div> -->
+		<a href="###" onclick="is_sign()">
+			<div class="sgloader">
+				<img src="__WIMG__/index/sigignn1.png " />
+				<if condition="$sign_num neq 0">
+					<div class="eta">
+						<span>点击领取消费JM</span>
+						<span>每日24点清零</span>
+						<span>未领取不补发</span>
+						<span>+{$sign_num}</span>
+					</div>
+				</if>
+				<div class="loader">
+					<div class="face">
+						<div class="circle"></div>
+					</div>
+					<div class="face">
+						<div class="circle2"></div>
+					</div>
+					<div class="sigignnfonts"></div>
+				</div>	
+			</div>
+		</a>
+		<span class="sginstruction" style="color:#353535;font-size:8px;">
+				注：消费JM由JM额度逐日释放，未领取视为自动放弃，不补发。</span>
+		<div class="signincenter1">
+			<volist name="guanggao" id="src">
+				<img src="/Uploads/{$src['src']}" />
+			</volist>
+		</div>
+	</div>
+</div>	
+<div class="footer-fan">
+	<a href="{:U('Index/index')}">
+		<img src="__WIMG__/index/shouye2.png" alt="首页">
+		<p>交易</p>
+	</a>
+	<a href="">
+		<img src="__WIMG__/index/zichan3.png" alt="签到" id="signin">
+		<p>签到</p>
+	</a>
+	<a href="{:U('Shop/home/index')}">
+		<img src="__WIMG__/index/consumptionico.png" alt="商城">
+		<p>商城</p>
+	</a>
+	<!-- <a href="#" onclick="msgAlert()"> -->
+		<!-- <img src="__WIMG__/index/shangcheng2.png" alt="发现"> -->
+		<!-- <p>发现</p> -->
+	<!-- </a> -->
+	<a href="{:U('User/Personal')}">
+		<img src="__WIMG__/index/wo2.png" alt="我的">
+		<p>我的</p>
+	</a>
+	<div id="kefu2" style="color: #737373;float: left;border: 1px solid #dcdcdc;font-size: 14px;width: 50px;height: 50px; position: absolute;right: 10px;bottom: 50px;display: none;">
+		<span style="float: left;padding-left: 3px;height: 25px;line-height: 25px;border-bottom:1px solid #dcdcdc;width: 40px;"><a href="{:U('liuyan/weixin')}">微信</a></span>
+		<span style="float: left;padding-left: 11px;height: 25px;line-height: 25px;"><a href="{:U('user/Complaint')}" >留言</a> </span>
+	</div>
+	<a href="#" id="kefu">
+		<img src="__WIMG__/index/kefu.png" alt="我的" id="kefuimg">
+		<p>客服</p>
+	</a>
+</div>
+
+  <script type="text/javascript">
+		function msgAlert(){
+			msg_alert('暂未开放，敬请期待！')
+		}
+
+		function is_sign(){
+			is_sign = {$is_sign};
+			sign_num = {$sign_num};
+			if(is_sign==1){
+				layer.open({
+					type: 1
+					,title: false //不显示标题栏
+					,closeBtn: false
+					,area: '300px;'
+					,shade: 0.8
+					,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+					,resize: false
+					,btn: ['签到', '取消']
+					,btnAlign: 'c'
+					,moveType: 1 //拖拽模式，0或者1
+					,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;border: 1px solid #edb22e80; border-radius: 10px; background: rgba(0, 0, 0, 0.48);">是否确定签到？,签到将获得'+sign_num+'Eta</div>'
+					,yes: function(layero){
+						layer.close(layero);
+						$.get('{:U("index/is_sign")}',function(res){
+							$(".eta").animate({
+						      left:'0',
+						      opacity:'0',
+						      height:'0px',
+						      width:'0px'
+						    });
+							if(res.code==1){
+								msg_alert(res.msg);
+							}else{
+								msg_alert(res.msg);
+							}
+						},'json');
+					}
+				});
+			}else{
+				msg_alert('已签到');
+			}
+
+
+
+					// $.get('{:U("index/is_sign")}',function(res){
+					// 	if(res.code==1){
+					// 		// msg_alert(res.msg);
+					// 	}else{
+					// 		// msg_alert(res.msg);
+					// 	}
+					// },'json');
+					
+
+
+
+
+			// layer.msg('您是否确定签到?',{
+			// 	type:2,
+			// 	time:0,
+			// 	content:'<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">是否确定签到</div>',
+			// 	btn:['签到','否'],
+			// 	yes:function(index){
+			// 		layer.close(index);
+			// 		$.get('{:U("index/is_sign")}',function(res){
+			// 			if(res.code==1){
+			// 				msg_alert(res.msg);
+			// 			}else{
+			// 				msg_alert(res.msg);
+			// 			}
+			// 		},'json');
+			// 	}
+			// })
+			
+		}
+</script>
+
+<script type="text/javascript">
+	
+	// 公告循环
+	(function (win){ 
+		var callboarTimer; 
+		var callboard = $('#callboard'); 
+		var callboardUl = callboard.find('ul'); 
+		var callboardLi = callboard.find('li'); 
+		var liLen = callboard.find('li').length; 
+		var initHeight = callboardLi.first().outerHeight(true); 
+		// console.log(callboardLi.first().outerHeight(true));
+		win.autoAnimation = function (){ 
+			if (liLen <= 1) return; 
+			var self = arguments.callee; 
+			var callboardLiFirst = callboard.find('li').first(); 
+			callboardLiFirst.animate({ 
+				marginTop:-initHeight 
+			}, 500, function (){ 
+				clearTimeout(callboarTimer); 
+				callboardLiFirst.appendTo(callboardUl).css({marginTop:0}); 
+				callboarTimer = setTimeout(self, 5000); 
+			}); 
+		} 
+		callboard.mouseenter( 
+		function (){ 
+			clearTimeout(callboarTimer); 
+		}).mouseleave(function (){ 
+			callboarTimer = setTimeout(win.autoAnimation, 5000); 
+		}); 
+	}(window)); 
+	setTimeout(window.autoAnimation, 5000); 
+
+
+
+    $("#hide").click(function(){
+		$.ajax({
+			url:'/Index/index',
+			type:'post',
+			datatype:'json',
+			success:function (mes) {
+				if(mes.status == 1){
+                    //alert(mes.message);
+				    msg_alert(mes.message,mes.url);
+                    $("#hide_none").hide(1000);
+                    location.href="";
+				}else{
+
+                    msg_alert(mes.message);
+                }
+            }
+		})
+    });
+</script>
+
+<script type="text/javascript">
+    var glide = $('.slider').glide({
+        //autoplay:true,//是否自动播放 默认值 true如果不需要就设置此值
+        animationTime:500, //动画过度效果，只有当浏览器支持CSS3的时候生效
+        arrows:false, //是否显示左右导航器
+        arrowsWrapperClass: "arrowsWrapper",//滑块箭头导航器外部DIV类名
+        arrowMainClass: "slider-arrow",//滑块箭头公共类名
+        arrowRightClass:"slider-arrow--right",//滑块右箭头类名
+        arrowLeftClass:"slider-arrow--left",//滑块左箭头类名
+        arrowRightText:">",//定义左右导航器文字或者符号也可以是类
+        arrowLeftText:"<",
+
+        nav:true, //主导航器也就是本例中显示的小方块
+        navCenter:true, //主导航器位置是否居中
+        navClass:"slider-nav",//主导航器外部div类名
+        navItemClass:"slider-nav__item", //本例中小方块的样式
+        navCurrentItemClass:"slider-nav__item--current" //被选中后的样式
+    });
+</script>
+</body>
+
+</html>
+<script type="text/javascript">
+	window.onload=function (){
+		var is_sign = {$is_sign};
+		if(is_sign!=1){
+			$(".eta").hide();
+		}
+	}
+</script>
+<script type="text/javascript">
+	$('#kefu').click(function(){
+		var status = $('#kefu2').css('display');
+		if(status=="none"){
+			$('#signin').attr('src',"__WIMG__/index/zichan2.png");
+			$('#kefuimg').attr('src',"__WIMG__/index/kefu2.png");
+			$('#kefu2').css('display',"inline");
+		}else{
+			$('#signin').attr('src',"__WIMG__/index/zichan3.png");
+			$('#kefuimg').attr('src',"__WIMG__/index/kefu.png");
+			$('#kefu2').css('display',"none");
+		}
+	});
+</script>

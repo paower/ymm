@@ -1,0 +1,134 @@
+<extend name="Public/layout"/>
+<block name="style" >
+    <link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+ <style>
+  .sum {overflow:hidden}
+  .sum div{font-size: 20px; float: left; padding: 10px;color: #333;}
+</style>
+</block>
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <foreach name="_menu_tab['name']" item="tab_v" >
+            <li class="text-muted">{$tab_v}</li>
+            </foreach>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="panel-body">
+                <div class="builder formbuilder-box">
+                        
+                        <div class="form-group"></div>
+
+                        <!-- 顶部工具栏按钮 -->
+                        
+
+                        <style type="text/css">
+                            tr,td{
+                               margin: 0 !important;
+                               padding: 5px 5px !important;
+                            }
+                        </style>
+											
+                        <!-- 数据列表 -->
+                        <div class="builder-container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="builder-table">
+                                        <div class="panel panel-default table-responsive">
+                                            <table class="table table-bordered table-striped table-hover">
+                                              <thead>
+                                                <tr>
+                                                    <th>UID</th>
+                                                    <th>用户</th>
+                                                    <th>类型</th>
+                                                    <th>购卡金额</th>
+                                                    <th>打款截图</th>
+                                                    <th>时间</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                                <tbody>
+                                                    <volist name="list" id="vo">
+                                                        <tr>
+                                                        
+                                                            <td>{$vo['userid']}</td>
+                                                            <td>
+                                                                账号：{$vo['account']} <br />
+                                                                姓名：{$vo['username']} <br />
+                                                                手机：{$vo['mobile']}
+                                                            </td>
+                                                            <td>
+                                                                <if condition="$vo['type'] eq 'bank'">
+                                                                银行卡
+                                                                <elseif condition="$vo['type'] eq 'wx'"/ >
+                                                                微信
+                                                                <else/>
+                                                                支付宝
+                                                                </if>
+                                                            </td>
+                                                            <td>
+                                                                {$vo.money}
+                                                            </td>
+                                                            <td><a href="{$vo['image']}" target="_blank"><img src="{$vo['image']}" width="60" height="100px"></a></td>
+                                                            <td>{$vo['createtime']|date='Y-m-d H:i:s',###}</td>
+                                                            <td>
+                                                                <if condition="$vo['examine'] eq 0">
+                                                                <a title="审核" target="_blank" id="examine" class="label label-primary-outline label-pill" href="javascript:void(0);" onclick="examine({$vo['id']})">审核</a>
+                                                                <else/>
+                                                                审核成功
+                                                                </if>
+                                                            </td>
+                                                        </tr>
+                                                    
+                                                    </volist>
+
+                                                    <empty name="list">
+                                                        <tr class="builder-data-empty">
+                                                            <td class="text-center empty-info" colspan="20">
+                                                                <i class="fa fa-database"></i> 暂时没有数据<br>
+                                                            </td>
+                                                        </tr>
+                                                    </empty>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <notempty name="table_data_page">
+                                            <ul class="pagination">{$table_data_page}</ul>
+                                        </notempty>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+    </div>                   
+</div>
+</block>
+
+<block name="script">
+
+    <script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+    <script>
+        // console.loh($)
+        function examine(id){
+            if(confirm('是否审核成功')){
+                $.get('/adminymm/user/userrechar_examine/id/'+id,function(res){
+                    if(res.status == 1){
+                        alert(res.info);
+                         window.location.reload();
+                    }else{
+                        alert(res.info);
+                    }
+                },'json')
+            }
+        }
+    </script>
+</block>

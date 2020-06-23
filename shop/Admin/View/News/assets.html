@@ -1,0 +1,85 @@
+<extend name="Public/layout"/>
+<block name="style" >
+	<link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+	<link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+</block>
+
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+		<!-- 面包屑导航 -->
+		<ul class="breadcrumb">
+			<li><i class="fa fa-map-marker"></i></li>
+			<foreach name="_menu_tab['name']" item="tab_v" >
+			<li class="text-muted">{$tab_v}</li>
+			</foreach>
+		</ul>
+					
+		<!-- 主体内容区域 -->
+		<div class="tab-content ct-tab-content">
+			<div class="panel-body">
+				<div class="builder formbuilder-box">
+					<div class="builder-tabs builder-form-tabs">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="{:U('Config/group2',array('group'=>1))}">挖金设置</a>
+							</li>
+						</ul>
+					</div>
+						<div class="form-group"></div>
+						
+						<!-- 数据列表 -->
+						<div class="builder-container">
+							<form action="{:U('News/xiugai')}" method="post" enctype="multipart/form-data">
+							<div class="row">
+								<hr/>
+								<div class="form-group">
+									<div class="col-sm-9 coldday" style="margin-top: 10px;">
+										<input type="hidden" name="id1" value="{$assets1['id']}" style="font-weight: normal;">
+										<input type="text" name="time1" class="" value="{$assets1['time']}">
+										<label class="control-label left">天</label>
+										利息：<input type="text" name="lixi1" value="{$assets1['lixi']}">%
+									</div>
+									<div class="col-sm-9 coldday" style="margin-top: 30px;"> 
+										<input type="hidden" name="id2" value="{$assets2['id']}" style="font-weight: normal;">
+										<input type="text" name="time2" value="{$assets2['time']}">
+										<label class="control-label left">个月</label>
+										利息：<input type="text" name="lixi2" value="{$assets2['lixi']}">%
+									</div>
+									<div class="col-sm-9 coldday" style="margin-top: 30px;">                                        
+										<input type="hidden" name="id3" value="{$assets3['id']}" style="font-weight: normal;">
+										<input type="text" name="time3" value="{$assets3['time']}">
+										<label class="control-label left" >个月</label>
+										利息：<input type="text" name="lixi3" value="{$assets3['lixi']}">%
+									</div>
+									<div class="col-sm-9 coldday" style="margin-top: 30px;">                                        
+										<input type="hidden" name="id4" value="{$assets4['id']}" style="font-weight: normal;">
+										<input type="text" name="time4" value="{$assets4['time']}">
+										<label class="control-label left">个月</label>
+										利息：<input type="text" name="lixi4" value="{$assets4['lixi']}">%
+									</div>
+									<div class="col-sm-9 coldday" style="margin-top: 30px;">                                        
+										<input type="hidden" name="id5" value="{$assets5['id']}" style="font-weight: normal;">
+										<input type="text" name="time5" value="{$assets5['time']}">
+										<label class="control-label left">个月</label>
+										利息：<input type="text" name="lixi5" value="{$assets5['lixi']}">%
+									</div>
+								</div>
+								<hr/>
+								<div class="form-group bottom_button_list col-sm-9" style="margin-top: 70px;">   
+									<button class="btn btn-primary" type="submit" style="width: 120px;">确定</button>
+								</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				</div>
+			</div>
+	</div>                   
+</div>
+</block>
+
+<block name="script">
+	<script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+</block>

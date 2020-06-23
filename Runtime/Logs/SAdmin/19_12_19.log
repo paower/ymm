@@ -1,0 +1,807 @@
+[ 2019-12-19T18:54:39+08:00 ] 117.136.79.1 /nc.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000641s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+
+[ 2019-12-19T18:54:39+08:00 ] 117.136.79.1 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000598s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2019-12-19T18:54:43+08:00 ] 116.198.10.4 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000638s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000259s ]
+
+[ 2019-12-19T18:54:53+08:00 ] 117.136.79.1 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000615s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001470s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_admin` WHERE `a_uname` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0002s ]
+SQL: UPDATE `nc_admin` SET `a_last_login_time`='1576752893',`a_login_count`=a_login_count+1,`a_last_login_ip`='117.136.79.1' WHERE `a_id` = 1 [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_user_action` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_user_action` (`type`,`user_id`,`uname`,`add_time`,`info`) VALUES ('后台系统用户','1','admin','2019-12-19 18:54:53','登录了后台系统') [ RunTime:0.0001s ]
+
+[ 2019-12-19T18:54:53+08:00 ] 117.136.79.1 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000603s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001477s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576752893 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_order` WHERE `time` BETWEEN null AND null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_member` WHERE `create_time` BETWEEN null AND null LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002769s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001918s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002108s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000063s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000288s ]
+
+[ 2019-12-19T18:54:57+08:00 ] 116.198.10.10 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000943s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001996s ]
+
+[ 2019-12-19T18:54:57+08:00 ] 116.198.15.8 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000621s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001535s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002582s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000256s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2019-12-19T18:55:39+08:00 ] 120.204.17.73 /nc.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000644s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+
+[ 2019-12-19T18:55:54+08:00 ] 120.204.17.71 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000628s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001518s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2019-12-19T18:56:23+08:00 ] 119.131.90.68 /nc.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000639s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001536s ]
+
+[ 2019-12-19T18:56:23+08:00 ] 119.131.90.68 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000621s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001497s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002565s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000273s ]
+
+[ 2019-12-19T18:56:41+08:00 ] 119.131.90.68 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000615s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001488s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_admin` WHERE `a_uname` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0002s ]
+SQL: UPDATE `nc_admin` SET `a_last_login_time`='1576753001',`a_login_count`=a_login_count+1,`a_last_login_ip`='119.131.90.68' WHERE `a_id` = 1 [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_user_action` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_user_action` (`type`,`user_id`,`uname`,`add_time`,`info`) VALUES ('后台系统用户','1','admin','2019-12-19 18:56:41','登录了后台系统') [ RunTime:0.0001s ]
+
+[ 2019-12-19T18:56:41+08:00 ] 119.131.90.68 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000604s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001495s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576753001 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_order` WHERE `time` BETWEEN null AND null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_member` WHERE `create_time` BETWEEN null AND null LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002764s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000278s ]
+
+[ 2019-12-19T18:56:49+08:00 ] 119.131.90.68 /nc.php?s=/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000612s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0005s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576753009 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: status /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/OrderController.class.php 第 42 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/shop/SAdmin/Model/OrderModel.class.php 第 52 行.
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' and o.order_sellerid = 0  [ RunTime:0.0003s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' and o.order_sellerid = 0 ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 151 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 152 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 153 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 154 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 155 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 161 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 162 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000716s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2019-12-19T18:57:53+08:00 ] 119.131.90.68 /nc.php?s=/Order/show_order/id/702.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000616s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001518s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0005s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576753073 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT o.*,m.com_name FROM ysk_order o,ysk_order_detail m WHERE m.uid = o.uid AND  o.order_id=702 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ysk_user` [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `ysk_user` WHERE `userid` = 9179 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `mobile` FROM `ysk_user` WHERE `userid` = 9179 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: value /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 251 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003697s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined variable: breadcrumb2 /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 132 行.
+NOTIC: [8] Undefined variable: breadcrumb2 /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 144 行.
+SQL: SELECT * FROM `ysk_order_detail` WHERE `order_id` = 702  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `shop_name` FROM `ysk_gerenshangpu` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: goods_id /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 300 行.
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `ysk_product_cate` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2019-12-19T18:58:04+08:00 ] 119.131.90.68 /nc.php?s=/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000610s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001504s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0005s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576753084 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0002s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: status /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/OrderController.class.php 第 42 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/shop/SAdmin/Model/OrderModel.class.php 第 52 行.
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' and o.order_sellerid = 0  [ RunTime:0.0003s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' and o.order_sellerid = 0 ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001898s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 151 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 152 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 153 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 154 行.
+NOTIC: [8] Undefined variable: f_status /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 155 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 161 行.
+NOTIC: [8] Undefined variable: type /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 162 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+NOTIC: [8] Undefined index: phone /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/c6c7e1e713387bc89be0c7f2d8af8cf8.php 第 194 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000378s ]
+
+[ 2019-12-19T18:58:07+08:00 ] 119.131.90.68 /nc.php?s=/Order/show_order/id/709.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000615s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001508s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0005s ]
+SQL: SELECT `order_id` FROM `ysk_order` WHERE ( deadline <=1576753087 AND status = 2 )  [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 583 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_store` [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_tranmoney` [ RunTime:0.0003s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_order_detail` [ RunTime:0.0003s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 583  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 583 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 590 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+80 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 590  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 590 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 592 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+20 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 592  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 592 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 593 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '8748' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+50 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 8748 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 8748 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','8748','0','36','1026.01','1026.01') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 593  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 593 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_order` SET `status`='3' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_order` WHERE `order_id` = 654 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `cangku_ratio` FROM ysk_gerenshangpu gr INNER JOIN ysk_product_cate pc ON gr.shop_cate=pc.id  WHERE gr.userid = '9183' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+350 WHERE `uid` = 1 [ RunTime:0.0001s ]
+SQL: UPDATE `ysk_store` SET `cangku_num`=cangku_num+0 WHERE `uid` = 9183 [ RunTime:0.0001s ]
+SQL: SELECT `cangku_num` FROM `ysk_store` WHERE `uid` = 9183 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `ysk_tranmoney` (`pay_id`,`get_id`,`get_nums`,`get_type`,`now_nums`,`now_nums_get`) VALUES ('0','9183','0','36','2410.50','2410.50') [ RunTime:0.0001s ]
+SQL: SELECT `com_id`,`com_num` FROM `ysk_order_detail` WHERE `order_id` = 654  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: set_meal /www/wwwroot/shop.yumr.com/shop/SAdmin/Controller/CommonController.class.php 第 109 行.
+SQL: UPDATE `ysk_order` SET `status`='2' WHERE `order_id` = 654 [ RunTime:0.0001s ]
+SQL: SELECT o.*,m.com_name FROM ysk_order o,ysk_order_detail m WHERE m.uid = o.uid AND  o.order_id=709 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ysk_user` [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `ysk_user` WHERE `userid` = 9321 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `mobile` FROM `ysk_user` WHERE `userid` = 9321 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: value /www/wwwroot/shop.yumr.com/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 251 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003499s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: breadcrumb2 /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 132 行.
+NOTIC: [8] Undefined variable: breadcrumb2 /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 144 行.
+SQL: SELECT * FROM `ysk_order_detail` WHERE `order_id` = 709  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT `shop_name` FROM `ysk_gerenshangpu` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: goods_id /www/wwwroot/shop.yumr.com/Runtime/Cache/SAdmin/332c1098205cd183ace65956887d4154.php 第 300 行.
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `ysk_product_cate` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001539s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+

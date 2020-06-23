@@ -1,0 +1,116 @@
+<extend name="Public:base" />
+
+<block name="content">	
+
+<form action="{:U('Goods/cateUpdate')}" method="POST" id="cateForm" enctype="multipart/form-data">
+
+
+<div class="form-group required">
+	<label class="col-sm-2 control-label" for="input-name2">分类标题：</label>
+	<div class="col-sm-3">
+	    <input id="input-name2" class="form-control" type="text" placeholder="分类标题"
+	           value="{$cate['name']}" name="name">
+	</div>
+</div>
+<div style="clear: both;"></div>
+
+<div class="form-group required" style="margin: 10px 0px;">
+		<label class="col-sm-2 control-label" for="input-name2">返还商家余额折扣：<br/>(商家所获得余额)</label>
+		<div class="input-group" style="width: 200px;padding-left: 10px;">
+				<input id="input-name2" class="form-control" type="text" placeholder="余额折扣" value="{$cate['cangku_ratio']*100}" name="cangku_ratio">
+				<span class="input-group-addon">%</span>
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="form-group required" style="margin: 10px 0px;">
+		<label class="col-sm-2 control-label" for="input-name2">返还用户积分折扣：<br/>(用户所获得积分)</label>
+		<div class="input-group" style="width: 200px;padding-left: 10px;">
+			<input id="input-name2" class="form-control" type="text" placeholder="积分折扣" value="{$cate['fengmi_ratio']*100}" name="fengmi_ratio">
+			<span class="input-group-addon">%</span>
+			
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="form-group required" style="margin: 10px 0px;">
+		<label class="col-sm-2 control-label" for="input-name2">自动收货时间：<br/>(默认为零则为7天后自动收货)</label>
+		<div class="input-group" style="width: 200px;padding-left: 10px;">
+			<input id="input-name2" class="form-control" type="text" placeholder="自动收货时间" value="{$cate['goods_end']/3600}" name="goods_end">
+			<span class="input-group-addon">小时</span>
+			
+		</div>
+	</div>
+
+<div style="clear: both;"></div>
+<div class="form-group required">
+	<label class="col-sm-2 control-label" for="input-name2">图片上传：</label>
+	<div class="col-sm-3">
+	    <input id="input-name2" class="form-control" accept="image/png,image/gif" type="file" placeholder="分类标题" value="{$cate['pic']}" name="pic">
+	</div>
+</div>
+
+<div style="clear: both;"></div>
+<div class="form-group required" style="margin:10px 0px;">
+	<label class="col-sm-2 control-label" for="input-name2">&nbsp;</label>
+	<div class="col-sm-3">
+		<img src="{$cate['pic']}" width="100" height="100" />
+	</div>
+</div>
+
+
+<div style="clear: both;"></div>
+<input type="hidden" name="id" value="{$cate['id']}"/>
+<div class="padding border-bottom">  
+  <button type="button" class="btn btn-primary" id="addCate" ><span class="icon-plus-square-o"></span>提交</button>
+  </div>
+
+</form>
+
+
+
+
+
+</block>
+<block name="javascript">
+<script>	
+$(function(){
+	$("#addCate").click(function(){
+		var pic  = $("input[name='pic']").val();
+		var name  = $("input[name='name']").val();
+		cangku_ratio = $("input[name='cangku_ratio']").val();
+		fengmi_ratio = $("input[name='fengmi_ratio']").val();
+		
+		
+
+		if(!name){
+			alert("请输入分类标题");
+			return;
+		}
+
+		if(cangku_ratio==''){
+			alert('请输入返还商家余额折扣');
+			return;
+		}
+		if(fengmi_ratio==''){
+			alert('请输入返还用户积分折扣');
+			return;
+		}
+		
+		$("#cateForm").submit();
+
+	});
+
+   $("#search").click(function () {
+        var url = $(this).attr('url');
+        var query = $('.search-form').find('input,select').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+        query = query.replace(/^&/g, '');
+        if (url.indexOf('?') > 0) {
+            url += '&' + query;
+        } else {
+            url += '?' + query;
+        }
+        window.location.href = url;
+    });	
+});
+</script>
+</block>

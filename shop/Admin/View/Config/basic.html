@@ -1,0 +1,237 @@
+<extend name="Public/layout"/>
+<block name="style" >
+    <link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+</block>
+
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <foreach name="_menu_tab['name']" item="tab_v" >
+            <li class="text-muted">{$tab_v}</li>
+            </foreach>
+             <li class="text-muted">奖励设置</li>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="panel-body">
+                <div class="builder formbuilder-box">
+                    <div class="builder-tabs builder-form-tabs">
+                        <ul class="nav nav-tabs">
+
+                            <li class="active">
+                                <a href="{:U('Config/group2',array('group'=>1))}">基本设置</a>
+                            </li>
+                            <li class="">
+                                <a href="{:U('Config/group4')}">奖励设置</a>
+                            </li>
+
+                            <!--<li class="">
+                                <a href="{:U('Config/group1',array('group1'=>5))}">实时价格设置</a>
+                            </li>-->
+                            <li class="">
+                                <a href="{:U('Config/group',array('group'=>3))}">网站开关</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group"></div>
+                    <div class="builder-container" >
+                        兑换说明
+                        <form>
+                        	<p><input type="text" id="p1" value="{$info.0.content}"style="width: 500px;"></p>
+                        	<p><input type="text" id="p2" value="{$info.1.content}"style="width: 500px;"></p>
+                        	<p><input type="text" id="p3" value="{$info.2.content}"style="width: 500px;"></p>
+                        	<div class="form-group bottom_button_list">
+								<a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="xfjl_config()" >保存</a>
+								<a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+							</div>
+                        </form>
+                        <noblock>
+							<script>
+								function xfjl_config(){
+									var p1 = $('#p1').val();
+									var p2 = $('#p2').val();
+									var p3 = $('#p3').val();
+
+									var Data={'p1':p1,'p2':p2,'p3':p3};
+									var Url="{:U('Config/exchange_instructions')}";
+									
+									ajax(Data,Url);
+								}
+							</script>
+						</noblock>
+                    </div>
+
+                    <div class="builder-container" >
+                        会员等级
+                        <form>
+                            <p>等级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消费金额</p>
+                            <p>1--<input type="text" id="l1name" value="{$info2.0.name}">--<input type="text" id="l1pay_money" value="{$info2.0.pay_money}"></p>
+                            <p>2--<input type="text" id="l2name" value="{$info2.1.name}">--<input type="text" id="l2pay_money" value="{$info2.1.pay_money}"></p>
+                            <p>3--<input type="text" id="l3name" value="{$info2.2.name}">--<input type="text" id="l3pay_money" value="{$info2.2.pay_money}"></p>
+                            <p>4--<input type="text" id="l4name" value="{$info2.3.name}">--<input type="text" id="l4pay_money" value="{$info2.3.pay_money}"></p>
+                            <p>5--<input type="text" id="l5name" value="{$info2.4.name}">--<input type="text" id="l5pay_money" value="{$info2.4.pay_money}"></p>
+							<p>6--<input type="text" id="l6name" value="{$info2.5.name}">--<input type="text" id="l6pay_money" value="{$info2.5.pay_money}"></p>
+                            <p>7--<input type="text" id="l7name" value="{$info2.6.name}">--<input type="text" id="l7pay_money" value="{$info2.6.pay_money}"></p>
+                            <p>8--<input type="text" id="l8name" value="{$info2.7.name}">--<input type="text" id="l8pay_money" value="{$info2.7.pay_money}"></p>
+                            <p>9--<input type="text" id="l9name" value="{$info2.8.name}">--<input type="text" id="l9pay_money" value="{$info2.8.pay_money}"></p>
+                            <div class="form-group bottom_button_list">
+                                <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="change_user_level_name()" >保存</a>
+                                <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+                            </div>
+                        </form>
+                        <noblock>
+                            <script>
+                                function change_user_level_name(){
+                                    var l1name = $('#l1name').val();
+                                    var l2name = $('#l2name').val();
+                                    var l3name = $('#l3name').val();
+                                    var l4name = $('#l4name').val();
+                                    var l5name = $('#l5name').val();
+									var l6name = $('#l6name').val();
+                                    var l7name = $('#l7name').val();
+                                    var l8name = $('#l8name').val();
+                                    var l9name = $('#l9name').val();
+
+                                    var l1pay_money = $('#l1pay_money').val();
+                                    var l2pay_money = $('#l2pay_money').val();
+                                    var l3pay_money = $('#l3pay_money').val();
+                                    var l4pay_money = $('#l4pay_money').val();
+                                    var l5pay_money = $('#l5pay_money').val();
+									var l6pay_money = $('#l6pay_money').val();
+                                    var l7pay_money = $('#l7pay_money').val();
+                                    var l8pay_money = $('#l8pay_money').val();
+                                    var l9pay_money = $('#l9pay_money').val();
+                                    
+
+                                    var Data={'l1name':l1name,'l2name':l2name,'l3name':l3name,'l4name':l4name,'l5name':l5name,'l6name':l6name,'l7name':l7name,'l8name':l8name,'l9name':l9name,'l1pay_money':l1pay_money,'l2pay_money':l2pay_money,'l3pay_money':l3pay_money,'l4pay_money':l4pay_money,'l5pay_money':l5pay_money,'l6pay_money':l6pay_money,'l7pay_money':l7pay_money,'l8pay_money':l8pay_money,'l9pay_money':l9pay_money};
+                                    var Url="{:U('Config/change_user_level_name')}";
+                                    
+                                    ajax(Data,Url);
+                                }
+                            </script>
+                        </noblock>
+                    </div>
+
+                    <div class="builder-container" >
+                        客服配置
+                        <form action="{:U('config/kefu')}" enctype="multipart/form-data" method="post" id="form2">
+                            微信:<input type="text" name="name"value="{$kf_weixin}" /><br>
+                            二维码:<input type="file" name="photo" />
+                            <input type="submit" value="提交" >
+                        </form>
+                        <noblock>
+                            <script>
+                                function upload_kefu() {
+                                    $('#form2').submit();
+                                }
+                            </script>
+                        </noblock>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>                   
+</div>
+
+<script>
+    
+	function ajax(Data,Url){
+		$.ajax({
+			type:"post",
+			url:Url,
+			data:Data,
+			dataType:'json',
+			async:true,
+			success:function(msg){
+				if(msg==1){
+					alert('配置成功');
+					location.href="";
+				}else{
+					alert('配置失败');
+					location.href="";
+				}
+			}
+		});
+	}
+
+	function recharge_jlcssz(){
+		var rechar_firstReward = $("#rechar_firstReward").val();
+		var rechar_secondReward = $("#rechar_secondReward").val();
+		var reward_to_rechar = $("#reward_to_rechar").val();
+		var reward_to_shopEta = $("#reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('奖励进入商家JM不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+    function recharge_swap(){
+        var rechar_balance = $("#rechar_balance").val();
+        var rechar_integral = $("#rechar_integral").val();
+        if(rechar_balance == ''){
+            alert('充值兑换余额比例不能为空');
+            return false;
+        }
+        if(rechar_integral == ''){
+            alert('充值兑换积分比例不能为空');
+            return false;
+        }
+
+        var data = {'rechar_balance':rechar_balance,'rechar_integral':rechar_integral};
+        var url = '{:U("config/recharge_swap")}';
+        ajax(data,url);
+    }
+
+    function ratio(){
+        var exchange_ratio = $("#exchange_ratio").val();
+        var cash_ratio = $("#cash_ratio").val();
+        var transfer_ratio = $("#transfer_ratio").val();
+        if(exchange_ratio == ''){
+            alert('互转互赠比例不能为空');
+            return false;
+        }
+        if(cash_ratio == ''){
+            alert('提现比例不能为空');
+            return false;
+        }
+        if(transfer_ratio == ''){
+            alert('转让比例不能为空');
+            return false;
+        }
+
+        var data = {'exchange_ratio':exchange_ratio,'cash_ratio':cash_ratio,'transfer_ratio':transfer_ratio};
+        var url = '{:U("config/ratio")}';
+        ajax(data,url);
+    }
+	
+</script>
+</block>
+
+<block name="script">
+    <script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+</block>

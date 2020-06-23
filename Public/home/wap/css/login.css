@@ -1,0 +1,42 @@
+/* login */
+.bgf5{width: 100%;height: 100%;}
+.header_back {position: absolute;top: 10px;left: 10px;}
+.header_back img{width: .5rem;}
+.login-container{width: 100%;padding-bottom: 4rem;}
+.language{width: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;padding: .5rem .3rem}
+.yuyan{font-size: .27rem;color: #eb6100;display: flex;align-items: center;}
+.yuyan select{font-size: .27rem;background: none;border: none;color: #eb6100;outline: none;} 
+.yuyan option{color: #eb6100;}
+.logo{ width:100%; text-align: center;position: relative;top: -1.55rem}
+.logo img{ width: 4rem; }
+.formbox{ width: 100%; margin: 0 auto; margin-top: 2.3rem; text-align: center; -moz-border-radius:8px; -ms-border-radius:8px; -o-border-radius:8px; }
+.formlogin{width: 84%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 0.3rem;
+    position: relative;
+    top: -1rem;}
+.input_box{width: 100%;}
+.input_box input{ width: 80%; padding: .2rem 0;font-size:.28rem;    background: #dedede;
+    border-radius: 30px; color:#000; opacity: 0.5; text-align: center; margin-top: .2rem; }
+.inde-btn button{ margin:0.5rem 0;width: 80%; padding: .2rem 0;background: #eb6100;color: #fff; border-radius:2.1rem; -webkit-border-radius:2.1rem; -moz-border-radius:2.1rem; -ms-border-radius:2.1rem; -o-border-radius:2.1rem; }
+.extra_btn{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;}
+.extra_btn a{padding: .2rem .4rem;border-radius: .1rem;color: #eb6100; font-size: 0.3rem;}
+/* register */
+.register-title{color: #eb6100;font-size: .4rem;text-align: center;padding: .5rem 0;letter-spacing: .1rem;text-indent: .1rem;}
+.formrgister{width: 80%;margin:0 auto;padding-top: .2rem;font-size: .28rem;}
+.register-container .formbox{margin-top: 0;}
+.formrgister .input_box{margin-top: .3rem;}
+.formrgister .input_box p{color: #eb6100}
+.formrgister .inde-btn button{margin: .5rem 0;}
+.register-container .extra_btn{-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin: .5rem 0 1rem 0;}
+.input_box .input-code{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align: center;-ms-flex-align: center;align-items: center;margin-top: .2rem;}
+.input_box .input-code input{width: 60%;margin: 0;}
+.input_box .input-code img{ width: 35%;height: .66rem; border-radius:.1rem; -webkit-border-radius:.1rem; -moz-border-radius:.1rem; -ms-border-radius:.1rem; -o-border-radius:.1rem; }
+.input_box .phone-code{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.input_box .phone-code input{width:50%;height:0.72rem;border-radius:0;border-top-left-radius:.1rem;border-bottom-left-radius:.1rem;}
+.input_box .phone-code a{width: 50%;height:0.72rem; display: block;color:#1188ff;margin-top: .2rem;padding: .2rem 0;background: #d9bc59;font-size:.28rem;border-top-right-radius:.1rem;border-bottom-right-radius:.1rem;}
+/* getpsw */
+.formgetpsw .input_box p{color: #eb6100}
+.formgetpsw .input_box {margin-top: .5rem;}
+.getpwd-title{padding-top:1rem}

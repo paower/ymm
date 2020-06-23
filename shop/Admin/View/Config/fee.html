@@ -1,0 +1,2288 @@
+<extend name="Public/layout"/>
+<block name="style" >
+    <link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+</block>
+
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <foreach name="_menu_tab['name']" item="tab_v" >
+            <li class="text-muted">{$tab_v}</li>
+            </foreach>
+             <li class="text-muted">奖励设置</li>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="panel-body">
+                <div class="builder formbuilder-box">
+                    <div class="builder-tabs builder-form-tabs">
+                        <ul class="nav nav-tabs">
+
+                            <li class="">
+                                <a href="{:U('Config/group2',array('group'=>1))}">基本设置</a>
+                            </li>
+                            <li class="active">
+                                <a href="{:U('Config/group4')}">奖励设置</a>
+                            </li>
+
+                            <!--<li class="">
+                                <a href="{:U('Config/group1',array('group1'=>5))}">实时价格设置</a>
+                            </li>-->
+                            <li class="">
+                                <a href="{:U('Config/group',array('group'=>3))}">网站开关</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group"></div>
+                    <div class="builder-container" >
+                        <div class="row" >
+                            <div class="col-xs-12" >
+								{$v1_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_firstReward" name="rechar_firstReward" class="form-control" value="{$rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_secondReward" name="rechar_secondReward" class="form-control" value="{$rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_rechar" name="reward_to_rechar" class="form-control" value="{$reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_shopEta" name="reward_to_shopEta" class="form-control" value="{$reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v1_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_firstReward2" name="rechar_firstReward" class="form-control" value="{$rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_secondReward2" name="rechar_secondReward" class="form-control" value="{$rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_rechar2" name="reward_to_rechar" class="form-control" value="{$reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_shopEta2" name="reward_to_shopEta" class="form-control" value="{$reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v1_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_firstReward3" name="rechar_firstReward" class="form-control" value="{$rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="rechar_secondReward3" name="rechar_secondReward" class="form-control" value="{$rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_rechar3" name="reward_to_rechar" class="form-control" value="{$reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="reward_to_shopEta3" name="reward_to_shopEta" class="form-control" value="{$reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v2_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_firstReward" name="level2_rechar_firstReward" class="form-control" value="{$level2_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_secondReward" name="level2_rechar_secondReward" class="form-control" value="{$level2_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_rechar" name="level2_reward_to_rechar" class="form-control" value="{$level2_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_shopEta" name="level2_reward_to_shopEta" class="form-control" value="{$level2_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level2_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v2_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_firstReward2" name="level2_rechar_firstReward" class="form-control" value="{$level2_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_secondReward2" name="level2_rechar_secondReward" class="form-control" value="{$level2_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_rechar2" name="level2_reward_to_rechar" class="form-control" value="{$level2_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_shopEta2" name="level2_reward_to_shopEta" class="form-control" value="{$level2_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level2_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v2_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_firstReward3" name="level2_rechar_firstReward" class="form-control" value="{$level2_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level2_rechar_secondReward3" name="level2_rechar_secondReward" class="form-control" value="{$level2_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_rechar3" name="level2_reward_to_rechar" class="form-control" value="{$level2_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level2_reward_to_shopEta3" name="level2_reward_to_shopEta" class="form-control" value="{$level2_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level2_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v3_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_firstReward" name="level3_rechar_firstReward" class="form-control" value="{$level3_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_secondReward" name="level3_rechar_secondReward" class="form-control" value="{$level3_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_rechar" name="level3_reward_to_rechar" class="form-control" value="{$level3_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_shopEta" name="level3_reward_to_shopEta" class="form-control" value="{$level3_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level3_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v3_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_firstReward2" name="level3_rechar_firstReward" class="form-control" value="{$level3_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_secondReward2" name="level3_rechar_secondReward" class="form-control" value="{$level3_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_rechar2" name="level3_reward_to_rechar" class="form-control" value="{$level3_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_shopEta2" name="level3_reward_to_shopEta" class="form-control" value="{$level3_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level3_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v3_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_firstReward3" name="level3_rechar_firstReward" class="form-control" value="{$level3_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level3_rechar_secondReward3" name="level3_rechar_secondReward" class="form-control" value="{$level3_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_rechar3" name="level3_reward_to_rechar" class="form-control" value="{$level3_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level3_reward_to_shopEta3" name="level3_reward_to_shopEta" class="form-control" value="{$level3_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level3_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v4_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_firstReward" name="level4_rechar_firstReward" class="form-control" value="{$level4_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_secondReward" name="level4_rechar_secondReward" class="form-control" value="{$level4_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_rechar" name="level4_reward_to_rechar" class="form-control" value="{$level4_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_shopEta" name="level4_reward_to_shopEta" class="form-control" value="{$level4_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level4_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v4_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_firstReward2" name="level4_rechar_firstReward" class="form-control" value="{$level4_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_secondReward2" name="level4_rechar_secondReward" class="form-control" value="{$level4_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_rechar2" name="level4_reward_to_rechar" class="form-control" value="{$level4_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_shopEta2" name="level4_reward_to_shopEta" class="form-control" value="{$level4_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level4_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v4_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_firstReward3" name="level4_rechar_firstReward" class="form-control" value="{$level4_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level4_rechar_secondReward3" name="level4_rechar_secondReward" class="form-control" value="{$level4_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_rechar3" name="level4_reward_to_rechar" class="form-control" value="{$level4_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level4_reward_to_shopEta3" name="level4_reward_to_shopEta" class="form-control" value="{$level4_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level4_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v5_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_firstReward" name="level5_rechar_firstReward" class="form-control" value="{$level5_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_secondReward" name="level5_rechar_secondReward" class="form-control" value="{$level5_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_rechar" name="level5_reward_to_rechar" class="form-control" value="{$level5_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_shopEta" name="level5_reward_to_shopEta" class="form-control" value="{$level5_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level5_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v5_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_firstReward2" name="level5_rechar_firstReward" class="form-control" value="{$level5_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_secondReward2" name="level5_rechar_secondReward" class="form-control" value="{$level5_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_rechar2" name="level5_reward_to_rechar" class="form-control" value="{$level5_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_shopEta2" name="level5_reward_to_shopEta" class="form-control" value="{$level5_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level5_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v5_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_firstReward3" name="level5_rechar_firstReward" class="form-control" value="{$level5_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level5_rechar_secondReward3" name="level5_rechar_secondReward" class="form-control" value="{$level5_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_rechar3" name="level5_reward_to_rechar" class="form-control" value="{$level5_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level5_reward_to_shopEta3" name="level5_reward_to_shopEta" class="form-control" value="{$level5_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level5_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v6_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_firstReward" name="level6_rechar_firstReward" class="form-control" value="{$level6_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_secondReward" name="level6_rechar_secondReward" class="form-control" value="{$level6_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_rechar" name="level6_reward_to_rechar" class="form-control" value="{$level6_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_shopEta" name="level6_reward_to_shopEta" class="form-control" value="{$level6_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level6_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v6_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_firstReward2" name="level6_rechar_firstReward" class="form-control" value="{$level6_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_secondReward2" name="level6_rechar_secondReward" class="form-control" value="{$level6_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_rechar2" name="level6_reward_to_rechar" class="form-control" value="{$level6_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_shopEta2" name="level6_reward_to_shopEta" class="form-control" value="{$level6_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level6_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v6_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_firstReward3" name="level6_rechar_firstReward" class="form-control" value="{$level6_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level6_rechar_secondReward3" name="level6_rechar_secondReward" class="form-control" value="{$level6_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_rechar3" name="level6_reward_to_rechar" class="form-control" value="{$level6_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level6_reward_to_shopEta3" name="level6_reward_to_shopEta" class="form-control" value="{$level6_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level6_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v7_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_firstReward" name="level7_rechar_firstReward" class="form-control" value="{$level7_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_secondReward" name="level7_rechar_secondReward" class="form-control" value="{$level7_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_rechar" name="level7_reward_to_rechar" class="form-control" value="{$level7_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_shopEta" name="level7_reward_to_shopEta" class="form-control" value="{$level7_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level7_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v7_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_firstReward2" name="level7_rechar_firstReward" class="form-control" value="{$level7_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_secondReward2" name="level7_rechar_secondReward" class="form-control" value="{$level7_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_rechar2" name="level7_reward_to_rechar" class="form-control" value="{$level7_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_shopEta2" name="level7_reward_to_shopEta" class="form-control" value="{$level7_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level7_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v7_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_firstReward3" name="level7_rechar_firstReward" class="form-control" value="{$level7_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level7_rechar_secondReward3" name="level7_rechar_secondReward" class="form-control" value="{$level7_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_rechar3" name="level7_reward_to_rechar" class="form-control" value="{$level7_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level7_reward_to_shopEta3" name="level7_reward_to_shopEta" class="form-control" value="{$level7_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level7_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v8_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_firstReward" name="level8_rechar_firstReward" class="form-control" value="{$level8_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_secondReward" name="level8_rechar_secondReward" class="form-control" value="{$level8_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_rechar" name="level8_reward_to_rechar" class="form-control" value="{$level8_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_shopEta" name="level8_reward_to_shopEta" class="form-control" value="{$level8_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level8_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v8_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_firstReward2" name="level8_rechar_firstReward" class="form-control" value="{$level8_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_secondReward2" name="level8_rechar_secondReward" class="form-control" value="{$level8_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_rechar2" name="level8_reward_to_rechar" class="form-control" value="{$level8_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_shopEta2" name="level8_reward_to_shopEta" class="form-control" value="{$level8_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level8_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v8_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_firstReward3" name="level8_rechar_firstReward" class="form-control" value="{$level8_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level8_rechar_secondReward3" name="level8_rechar_secondReward" class="form-control" value="{$level8_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_rechar3" name="level8_reward_to_rechar" class="form-control" value="{$level8_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level8_reward_to_shopEta3" name="level8_reward_to_shopEta" class="form-control" value="{$level8_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level8_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v9_name}奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_firstReward" name="level9_rechar_firstReward" class="form-control" value="{$level9_rechar_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_secondReward" name="level9_rechar_secondReward" class="form-control" value="{$level9_rechar_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_rechar" name="level9_reward_to_rechar" class="form-control" value="{$level9_reward_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_shopEta" name="level9_reward_to_shopEta" class="form-control" value="{$level9_reward_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level9_recharge_jlcssz()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v9_name}二次奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_firstReward2" name="level9_rechar_firstReward" class="form-control" value="{$level9_rechar2_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_secondReward2" name="level9_rechar_secondReward" class="form-control" value="{$level9_rechar2_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_rechar2" name="level9_reward_to_rechar" class="form-control" value="{$level9_reward2_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_shopEta2" name="level9_reward_to_shopEta" class="form-control" value="{$level9_reward2_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level9_recharge_jlcssz2()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+
+								{$v9_name}二次以后奖励参数设置<hr style="margin-top: 0px;width: 100%">
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+								    <div class="form-type-list">
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡直推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_firstReward3" name="level9_rechar_firstReward" class="form-control" value="{$level9_rechar3_firstReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+								        <div class="form-group item_config[WEB_SITE_TITLE] ">
+								                <label class="left control-label">兑换卡间推奖励:</label>
+								                <div style="width:200px;" class="input-group">
+								                    <input type="text" style="width:160px;" id="level9_rechar_secondReward3" name="level9_rechar_secondReward" class="form-control" value="{$level9_rechar3_secondReward*100}" >
+								                    <span class="input-group-addon">%</span>
+								                                                                
+								                </div>
+								        </div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_rechar3" name="level9_reward_to_rechar" class="form-control" value="{$level9_reward3_to_rechar*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+										        <label class="left control-label">奖励进入商家JM:</label>
+										        <div style="width:200px;" class="input-group">
+										            <input type="text" style="width:160px;" id="level9_reward_to_shopEta3" name="level9_reward_to_shopEta" class="form-control" value="{$level9_reward3_to_shopEta*100}" >
+										            <span class="input-group-addon">%</span>
+										                                                        
+										        </div>
+										</div>
+								
+								        <div class="form-group"></div>
+								        <div class="form-group bottom_button_list">
+								            <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="level9_recharge_jlcssz3()" >保存</a>
+								            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+								        </div>
+								    </div>
+								</form>
+								
+								
+                                签到分红奖励设置<hr style="margin-top: 0px;width: 100%">
+
+
+								<form class="form-horizontal form form-builder " style="margin-bottom:20px">
+									<div class="form-type-list">
+										<!-- <div class="form-group item_config[WEB_SITE_TITLE]">
+											<label class="left control-label">奖励开关：</label>
+											<div class="right">
+												<div class="radio-inline cui-control cui-radio">
+													<label for="config[ADMIN_TABS]0">
+														<input type="radio"  class="radio" name="fh_status" value="0" <if condition="$reward.fh_status eq 0"> checked="true" </if> > 
+														<span class="cui-control-indicator"></span>
+														<span>关闭</span>
+												</label>
+												</div>
+												<div class="radio-inline cui-control cui-radio">
+													<label for="config[ADMIN_TABS]1">
+														<input type="radio" class="radio" name="fh_status" value="1" <if condition="$reward.fh_status eq 1"> checked="true" </if> > 
+													<span class="cui-control-indicator"></span>
+														<span>开启</span>
+													</label>
+												</div>        
+											</div>
+										</div> -->
+										<div class="form-group item_config[WEB_SITE_TITLE] ">
+												<label class="left control-label">签到奖励比例：</label>
+												<div style="width:200px;" class="input-group">
+													<input type="text" style="width:160px;" id="reward" name="reward" class="form-control" value="{$reward*100}" >
+													<span class="input-group-addon">%</span>
+																						  
+												</div>
+										</div>
+
+										<div class="form-group"></div>
+										<div class="form-group bottom_button_list">
+											<a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="xfjl_config()" >保存</a>
+											<a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+										</div>
+									</div>
+								</form>
+								<noblock>
+									<script>
+										function xfjl_config(){
+											if($('#reward').val()==''){
+												alert('分红奖励比例不能为空');
+												return false;
+											}
+											if($('.radio[name="fh_status"]:checked').val()==''){
+												alert('奖励开关不能为空');
+												return false;
+											}
+											
+											
+											var fh_status=$('.radio[name="fh_status"]:checked').val();
+											var reward=$('#reward').val();
+											
+
+											var Data={'fh_status':fh_status,'reward':reward};
+											var Url="{:U('Config/reward_config')}";
+											
+											ajax(Data,Url);
+										}
+									</script>
+								</noblock>
+
+                        兑换卡兑换比例<hr style="margin-top: 0px;width: 100%">
+                        <form class="form-horizontal form form-builder " style="margin-bottom:20px">
+                            <div class="form-type-list">
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">兑换卡兑换消费JM:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="rechar_balance" name="rechar_balance" class="form-control" value="{$rechar_balance*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">兑换卡兑换JM:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="rechar_integral" name="rechar_integral" class="form-control" value="{$rechar_integral*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+
+                                <div class="form-group"></div>
+                                <div class="form-group bottom_button_list">
+                                    <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="recharge_swap()" >保存</a>
+                                    <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                        比例<hr style="margin-top: 0px;width: 100%">
+                        <form class="form-horizontal form form-builder " style="margin-bottom:20px">
+                            <div class="form-type-list">
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">互转互赠比例:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="exchange_ratio" name="exchange_ratio" class="form-control" value="{$exchange_ratio*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">商家JM提现比例:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="cash_ratio" name="cash_ratio" class="form-control" value="{$cash_ratio*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">消费JM提现比例:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="cash2_ratio" name="cash_ratio" class="form-control" value="{$cash2_ratio*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+                                <div class="form-group item_config[WEB_SITE_TITLE] ">
+                                        <label class="left control-label">转让(挂卖)比例:</label>
+                                        <div style="width:200px;" class="input-group">
+                                            <input type="text" style="width:160px;" id="transfer_ratio" name="transfer_ratio" class="form-control" value="{$transfer_ratio*100}" >
+                                            <span class="input-group-addon">%</span>
+                                                                                        
+                                        </div>
+                                </div>
+
+                                <div class="form-group"></div>
+                                <div class="form-group bottom_button_list">
+                                    <a class="btn btn-primary submit ajax-post" href="javaacript:;" onclick="ratio()" >保存</a>
+                                    <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>                   
+</div>
+
+<script>
+    
+	function ajax(Data,Url){
+		$.ajax({
+			type:"post",
+			url:Url,
+			data:Data,
+			dataType:'json',
+			async:true,
+			success:function(msg){
+				if(msg==1){
+					alert('配置成功');
+					location.href="";
+				}else{
+					alert('配置失败');
+					location.href="";
+				}
+			}
+		});
+	}
+
+	function recharge_jlcssz(){
+		var rechar_firstReward = $("#rechar_firstReward").val();
+		var rechar_secondReward = $("#rechar_secondReward").val();
+		var reward_to_rechar = $("#reward_to_rechar").val();
+		var reward_to_shopEta = $("#reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('一级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('一级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('一级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('一级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function recharge_jlcssz2(){
+		var rechar_firstReward = $("#rechar_firstReward2").val();
+		var rechar_secondReward = $("#rechar_secondReward2").val();
+		var reward_to_rechar = $("#reward_to_rechar2").val();
+		var reward_to_shopEta = $("#reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('一级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('一级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('一级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('一级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function recharge_jlcssz3(){
+		var rechar_firstReward = $("#rechar_firstReward3").val();
+		var rechar_secondReward = $("#rechar_secondReward3").val();
+		var reward_to_rechar = $("#reward_to_rechar3").val();
+		var reward_to_shopEta = $("#reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('一级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('一级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('一级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('一级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//二级
+	function level2_recharge_jlcssz(){
+		var rechar_firstReward = $("#level2_rechar_firstReward").val();
+		var rechar_secondReward = $("#level2_rechar_secondReward").val();
+		var reward_to_rechar = $("#level2_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level2_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('二级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('二级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('二级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('二级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level2_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level2_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level2_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level2_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level2_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level2_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('二级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('二级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('二级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('二级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level2_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level2_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level2_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level2_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level2_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level2_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('二级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('二级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('二级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('二级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level2_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//三级
+	function level3_recharge_jlcssz(){
+		var rechar_firstReward = $("#level3_rechar_firstReward").val();
+		var rechar_secondReward = $("#level3_rechar_secondReward").val();
+		var reward_to_rechar = $("#level3_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level3_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('三级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('三级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('三级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('三级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level3_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level3_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level3_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level3_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level3_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level3_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('三级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('三级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('三级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('三级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level3_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level3_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level3_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level3_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level3_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level3_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('三级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('三级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('三级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('三级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level3_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//四级
+	function level4_recharge_jlcssz(){
+		var rechar_firstReward = $("#level4_rechar_firstReward").val();
+		var rechar_secondReward = $("#level4_rechar_secondReward").val();
+		var reward_to_rechar = $("#level4_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level4_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('四级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('四级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('四级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('四级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level4_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level4_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level4_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level4_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level4_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level4_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('四级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('四级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('四级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('四级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level4_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level4_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level4_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level4_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level4_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level4_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('四级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('四级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('四级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('四级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level4_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//五级
+	function level5_recharge_jlcssz(){
+		var rechar_firstReward = $("#level5_rechar_firstReward").val();
+		var rechar_secondReward = $("#level5_rechar_secondReward").val();
+		var reward_to_rechar = $("#level5_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level5_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('五级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('五级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('五级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('五级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level5_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level5_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level5_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level5_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level5_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level5_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('五级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('五级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('五级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('五级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level5_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level5_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level5_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level5_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level5_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level5_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('五级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('五级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('五级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('五级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level5_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//六级
+	function level6_recharge_jlcssz(){
+		var rechar_firstReward = $("#level6_rechar_firstReward").val();
+		var rechar_secondReward = $("#level6_rechar_secondReward").val();
+		var reward_to_rechar = $("#level6_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level6_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('六级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('六级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('六级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('六级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level6_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level6_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level6_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level6_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level6_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level6_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('六级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('六级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('六级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('六级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level6_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level6_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level6_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level6_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level6_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level6_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('六级三次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('六级三次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('六级三次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('六级三次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level6_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//七级
+	function level7_recharge_jlcssz(){
+		var rechar_firstReward = $("#level7_rechar_firstReward").val();
+		var rechar_secondReward = $("#level7_rechar_secondReward").val();
+		var reward_to_rechar = $("#level7_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level7_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('七级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('七级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('七级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('七级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level7_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level7_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level7_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level7_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level7_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level7_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('七级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('七级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('七级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('七级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level7_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level7_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level7_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level7_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level7_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level7_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('七级三次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('七级三次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('七级三次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('七级三次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level7_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//八级
+	function level8_recharge_jlcssz(){
+		var rechar_firstReward = $("#level8_rechar_firstReward").val();
+		var rechar_secondReward = $("#level8_rechar_secondReward").val();
+		var reward_to_rechar = $("#level8_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level8_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('八级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('八级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('八级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('八级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level8_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level8_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level8_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level8_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level8_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level8_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('八级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('八级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('八级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('八级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level8_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level8_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level8_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level8_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level8_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level8_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('八级三次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('八级三次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('八级三次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('八级三次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level8_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+	//九级
+	function level9_recharge_jlcssz(){
+		var rechar_firstReward = $("#level9_rechar_firstReward").val();
+		var rechar_secondReward = $("#level9_rechar_secondReward").val();
+		var reward_to_rechar = $("#level9_reward_to_rechar").val();
+		var reward_to_shopEta = $("#level9_reward_to_shopEta").val();
+		if(rechar_firstReward == ''){
+		    alert('九级充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('九级充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('九级奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('九级奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level9_recharge_jlcssz")}';
+		ajax(data,url);
+	}
+
+	function level9_recharge_jlcssz2(){
+		var rechar_firstReward = $("#level9_rechar_firstReward2").val();
+		var rechar_secondReward = $("#level9_rechar_secondReward2").val();
+		var reward_to_rechar = $("#level9_reward_to_rechar2").val();
+		var reward_to_shopEta = $("#level9_reward_to_shopEta2").val();
+		if(rechar_firstReward == ''){
+		    alert('九级二次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('九级二次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('九级二次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('九级二次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level9_recharge_jlcssz2")}';
+		ajax(data,url);
+	}
+
+	function level9_recharge_jlcssz3(){
+		var rechar_firstReward = $("#level9_rechar_firstReward3").val();
+		var rechar_secondReward = $("#level9_rechar_secondReward3").val();
+		var reward_to_rechar = $("#level9_reward_to_rechar3").val();
+		var reward_to_shopEta = $("#level9_reward_to_shopEta3").val();
+		if(rechar_firstReward == ''){
+		    alert('九级三次充值直推奖励不能为空');
+		    return false;
+		}
+		if(rechar_secondReward == ''){
+		    alert('九级三次充值间推奖励不能为空');
+		    return false;
+		}
+		if(reward_to_rechar == ''){
+		    alert('九级三次奖励进入充值不能为空');
+		    return false;
+		}
+		if(reward_to_shopEta == ''){
+		    alert('九级三次奖励进入商家Eta不能为空');
+		    return false;
+		}
+		if(Number(reward_to_rechar) + Number(reward_to_shopEta) != 100){
+			alert('奖励进入总比例应为百分百');
+			return false;
+		}
+		
+		var data = {'rechar_firstReward':rechar_firstReward,'rechar_secondReward':rechar_secondReward,'reward_to_rechar':reward_to_rechar,'reward_to_shopEta':reward_to_shopEta};
+		var url = '{:U("config/level9_recharge_jlcssz3")}';
+		ajax(data,url);
+	}
+
+    function recharge_swap(){
+        var rechar_balance = $("#rechar_balance").val();
+        var rechar_integral = $("#rechar_integral").val();
+        if(rechar_balance == ''){
+            alert('充值兑换余额比例不能为空');
+            return false;
+        }
+        if(rechar_integral == ''){
+            alert('充值兑换积分比例不能为空');
+            return false;
+        }
+
+        var data = {'rechar_balance':rechar_balance,'rechar_integral':rechar_integral};
+        var url = '{:U("config/recharge_swap")}';
+        ajax(data,url);
+    }
+
+
+    function ratio(){
+        var exchange_ratio = $("#exchange_ratio").val();
+        var cash_ratio = $("#cash_ratio").val();
+        var cash2_ratio = $("#cash2_ratio").val();
+        var transfer_ratio = $("#transfer_ratio").val();
+        if(exchange_ratio == ''){
+            alert('互转互赠比例不能为空');
+            return false;
+        }
+        if(cash_ratio == ''){
+            alert('提现比例不能为空');
+            return false;
+        }
+        if(transfer_ratio == ''){
+            alert('转让比例不能为空');
+            return false;
+        }
+
+        var data = {'exchange_ratio':exchange_ratio,'cash_ratio':cash_ratio,'cash2_ratio':cash2_ratio,'transfer_ratio':transfer_ratio};
+        var url = '{:U("config/ratio")}';
+        ajax(data,url);
+    }
+	
+</script>
+</block>
+
+<block name="script">
+    <script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+</block>

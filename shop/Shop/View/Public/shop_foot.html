@@ -1,0 +1,74 @@
+<?php $name= ACTION_NAME; ?>
+<!-- 底部 -->
+
+<style type="text/css">
+    .footer a p{
+            box-sizing:content-box;
+            color: #969696;
+    }
+
+    .footer a{
+            box-sizing:content-box;
+
+    }
+
+    .footer{
+            box-sizing:content-box;
+    }
+	.iconindex img{
+		width:26px;
+	}
+</style>
+<div class="footer">
+    <a href="{:U('/Shop/Home/index')}" <eq name="name" value="index">class="onb"</eq>>
+        <i class="iconindex"><img src="__IMG__/consumptionico1.png" /></i>
+        <p>首页</p>
+    </a>
+	<a href="{:U('Home/Index/index')}" <eq name="name" value="index">class="onb"</eq>>
+        <i class="iconindex"><img src="__IMG__/shouye2.png" /></i>
+        <p>交易</p>
+    </a>
+     <a href="{:U('/Shop/Home/cation')}" <eq name="name" value="cation">class="onb"</eq>>
+        <i class="iconindex"><img src="__IMG__/shanjia.png" /></i>
+        <p>商家分类</p>
+    </a>
+     <a href="{:U('/Shop/Car/shopping')}" <eq name="name" value="shopping">class="onb"</eq>>
+        <i class="iconindex"><img src="__IMG__/Cart.png" /></i>
+        <p>购物车</p>
+    </a>
+     <a id="button" href="{:U('/Shop/member/mine')}" <eq name="name" value="mine">class="onb"</eq>>
+        <i class="iconindex"><img id="picts" src="__IMG__/wo2.png" /></i>
+        <p>我的</p>
+    </a>
+</div>
+	<!-- <script> -->
+
+        <!-- function change_pic(){ -->
+            <!-- var button = document.getElementById("button"); -->
+
+            <!-- var picts = document.getElementById("picts"); -->
+
+            <!-- button.onclick = function(){ -->
+                <!-- if(picts.getAttribute("src",2) == "__IMG__/wo2.png"){ -->
+
+                    <!-- picts.setAttribute("src","__IMG__/wo3.png"); -->
+
+                <!-- }else{ -->
+
+                    <!-- picts.setAttribute("src","__IMG__/wo2.png"); -->
+
+                <!-- }; -->
+            <!-- } -->
+        <!-- } -->
+        <!-- change_pic(); -->
+
+    <!-- </script> -->
+</body>
+</html>
+
+
+
+
+
+
+

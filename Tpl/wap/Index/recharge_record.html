@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>兑换记录</title>
+<link rel="stylesheet" href="__WCSS__/style.css">
+<link rel="stylesheet" href="__WCSS__/meCen.css">
+<script src="__WJS__/jquery1.11.1.min.js"></script>
+<script src="__WJS__/iscroll.js"></script>
+<body class="bg96">
+<div class="header">
+    <div class="header_l"><a href="javascript:history.go(-1)"><img src="__WIMG__/jiant.png" alt=""></a></div>
+    <div class="header_c"><h2>兑换记录</h2></div>
+    <div class="header_r"></div>
+</div>
+<style type="text/css">    
+.yugejil1 {
+    width: 100%;
+    height: 40px;
+    background: #ddd;
+    line-height: 40px;
+    margin-top: 46px;
+}
+
+.yugejil1 p {
+    float: left;
+    width: 24.3%;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+
+.p23 {
+    line-height: 40px;
+}
+
+#wrapper li p {
+    float: left;
+    width: 24.3%;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}</style>
+<div class="">
+    <div class="yugejil1"><p>业务类型</p>
+        <p style="width:5%;">&nbsp;</p>
+        <p>数额</p>
+        <p style="width:5%;">&nbsp;</p>
+        <p>时间</p></div>
+    <div id="wrapper">
+        <div class="scroller">
+            <ul>
+                <foreach name="list" item="vo">
+                    <notempty name="vo.get_type">
+                    <li>
+                        <p>
+                            <if condition="$vo['get_type'] eq 37">
+                                购物
+                            </if>
+                            <if condition="$vo['get_type'] eq 30">
+                                兑换
+                            </if>
+                        </p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p>{$vo['get_nums']}</p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p class="p24">{$vo['createtime']|date="Y-m-d H:i:s",###}</p>
+                    </li>
+                    </notempty>
+					<notempty name="vo.pid">
+                    <li>
+                        <p>
+                            奖励
+                        </p >
+                        <p style="width:5%;">&nbsp;</p >
+                        <p>{$vo['money']}</p >
+                        <p style="width:5%;">&nbsp;</p >
+                        <p class="p24">{$vo['createtime']|date="Y-m-d H:i:s",###}</p >
+                    </li>
+                    </notempty>
+                    <eq name="vo.examine" value="1">
+                    <li>
+                        <p>
+                            充值成功
+                            
+                        </p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p>{$vo['money']}</p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p class="p24">{$vo['createtime']|date="Y-m-d H:i:s",###}</p>
+                    </li>
+                    </eq>
+
+                    <eq name="vo.examine" value="0">
+                    <li>
+                        <p>
+                            充值失败
+                            
+                        </p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p>{$vo['money']}</p>
+                        <p style="width:5%;">&nbsp;</p>
+                        <p class="p24">{$vo['createtime']|date="Y-m-d H:i:s",###}</p>
+                    </li>
+                    </eq>
+
+                    <notempty name="vo.type">
+                        <empty name = "vo.bank_id">
+                        <li>
+                            <p>
+                                奖励
+                            </p>
+                            <p style="width:5%;">&nbsp;</p>
+                            <p>{$vo['money']}</p>
+                            <p style="width:5%;">&nbsp;</p>
+                            <p class="p24">{$vo['createtime']|date="Y-m-d H:i:s",###}</p>
+                        </li>
+                        </empty>
+                    </notempty>
+                </foreach>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<script>    
+	var myscroll = new iScroll("wrapper", {
+    onScrollMove: function () {
+        if (this.y < (this.maxScrollY)) {
+            $('.pull_icon').addClass('flip');
+            $('.pull_icon').removeClass('loading');
+        } else {
+            $('.pull_icon').removeClass('flip loading');
+            $('.more span').text('上拉加载...')
+        }
+    }, onScrollEnd: function () {
+        if ($('.pull_icon').hasClass('flip')) {
+            $('.pull_icon').addClass('loading');
+            $('.more span').text('加载中...');               
+</script>
+</body>
+</html>

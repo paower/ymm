@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>產品上傳</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+
+    <!-- Link Swiper's CSS -->
+
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/foot.css">
+
+
+    <link rel="stylesheet" href="__CSS__/head.css">
+    <link rel="stylesheet" href="__ICON__/iconfont.css">
+    <link rel="stylesheet" href="__CSS__/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style22.css">
+<script type="text/javascript" src="__JS__/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/wangEditor.min.js"></script>
+
+    <!--彈框JS-->
+    <script type="text/javascript" src="/Public/home/common/layer/layer.js"></script>
+</head>
+<body>
+<style>
+    .address {
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+
+    .address li {
+        line-height: 10vmin;
+        font-size: 4.2vmin;
+    }
+
+    .address li input {
+        width: 66%;
+        height: 5vmin;
+        border: none;
+        padding: 0 1vmin;
+        border-bottom: 1px solid #aaaaaa;
+    }
+    .address li img{
+		width:98vmin;
+        height:62.5vmin;
+    }
+    .address li input[type=file]{
+        border-bottom: none;
+    }
+
+    .selectcc {
+        width: 83%;
+        border: none;
+        border-bottom: 1px solid #aaa;
+        font-family: "微軟雅黑";
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-right: 14px;
+    }
+
+    .dzq {
+        width: 84%;
+        height: 5vmin;
+        border: none;
+        border-bottom: 1px solid #aaaaaa;
+    }
+  
+    .col-sm-10{
+		display: inline-block;
+    }
+    .col-sm-10 .radio-inline{
+      display: inline-block;
+      margin-right: 4vmin;
+    }
+    .col-sm-10 .radio-inline input{
+      display: inline-block;
+      margin-right: 1vmin;
+    }
+    .form-group{
+      	height:6.5vmin;
+    }
+  
+  
+  .choice{  
+    position: relative;  
+  }  
+  .choice .radio{  
+    position: relative;  
+    display: inline-block;  
+    padding-left: 7.5vmin;  
+    margin-right:6vmin;
+  }  
+  .choice .radio input{  
+    position: absolute;  
+    left: -9999px;  
+  }  
+  .choice .radio i{  
+    display: block;  
+    position: absolute;  
+    top: 0px;  
+    left: 0;  
+    width: 12px;  
+    height: 12px;  
+    outline: 0;  
+    border: 1px solid #c2c2c2;  
+    background: #fff;  
+    border-radius: 50%;  
+    transition: border-color .3s  
+      -webkit-transition: border-color .3s;  
+  }  
+  .choice .radio input:checked+i{  
+    border-color: #5FB878;  
+  }  
+  .choice .radio input+i:after{  
+    position: absolute;  
+    content: '';  
+    top: 3px;  
+    left: 3px;  
+    width: 6px;  
+    height: 6px;  
+    border-radius: 50%;  
+    background-color: #5FB878;  
+    opacity: 0;  
+    transition: opacity .1s;  
+    -webkit-transition: opacity .1s;  
+  }  
+  .choice .radio input:checked+i:after{  
+    opacity: 1;  
+  }
+  	
+</style>
+<style media="screen">
+  .pic{
+      width:190px;
+      height:100px;
+      margin:20px auto;
+      cursor: pointer;
+      background-image: url(./nike3.jpeg);
+      background-size: cover;
+      }
+  </style>
+<div class="header">
+    <div class="header_l" style="width: 15%;">
+        <a href="Javascript:history.go(-1)"><img src="__IMG__/lpg.png" alt=""><span>商品信息</span></a>
+
+    </div>
+    <div class="header_c" style="width: 70%;"><h1 style="color:#000"></h1></div>
+    <div class="header_r" style="width: 15%;"></div>
+   
+</div>
+<form action="{:U('Shop/Home/Productsup')}" method="post" enctype="multipart/form-data" id="goodsinfo">
+    <div class="address" style="margin-left:1vmin;margin-right:1vmin;">
+        <ul id="inputa">
+            <input type="hidden" value="{$id}" name="id">
+
+            <li>商品名稱：<input type="text" value="{$produce_dets['name']}" name="name"></li>
+           
+            <li>商品詳情：<div  id="editor"></div><input name="content" type="hidden" id="text1" value="{$produce_dets['content']}"/> </li>
+
+            <li>售價：<input type="text" value="{$produce_dets['price']}" name="price"></li>
+            <li>原價：<input type="text" value="{$produce_dets['old_price']}" name="old_price"></li>
+           
+                                        <div class="form-group">
+                                <label class="col-sm-2 control-label">是否熱門：</label>
+                                <div class="col-sm-10">
+                                    <label class="radio-inline choice">
+                                      <label class="radio">是<input type="radio" {$produce_dets["gr_hot"]==1?'checked':''} name="gr_hot" value="1"><i></i></label>  
+		   							  <label class="radio">否<input type="radio" {$produce_dets["gr_hot"]==2?'checked':''} value="2" name="gr_hot"><i></i></label> 
+                                    
+                                </div>
+                            </div>
+
+                       <div class="form-group">
+                                <label class="col-sm-2 control-label">是否最新：</label>
+                                <div class="col-sm-10">
+                                    <label class="radio-inline choice">
+                                        <label class="radio">是<input type="radio" {$produce_dets["gr_new"]==1?'checked':''} name="gr_new" value="1"><i></i></label>  
+                                        <label class="radio">否<input type="radio" {$produce_dets["gr_new"]==2?'checked':''} value="2" name="gr_new"><i></i></label> 
+                                      
+                                      
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">是否推薦：</label>
+                                <div class="col-sm-10">
+                                    <label class="radio-inline choice">
+                                       <label class="radio">是<input type="radio" {$produce_dets["gr_tuijian"]==1?'checked':''} name="gr_tuijian" value="1"><i></i></label>  
+                                        <label class="radio">否<input type="radio" {$produce_dets["gr_tuijian"]==2?'checked':''} value="2" name="gr_tuijian"><i></i></label> 
+                                      
+                                      
+                                </div>
+                            </div>
+
+            <li>庫存：<input type="text" value="{$produce_dets['stock']}" placeholder="不填寫默認為888" name="kucun"></li>
+         
+            <li style="margin:3px 0px;">封面圖：
+                <div>
+                    <if condition="$produce_dets['pic'] eq ''">
+                        <img class="pic" src="__RZCSS__/upload.png" >
+                        <input class="upload" name="pic" accept="image/*" type="file" style="display: none"/>
+                    </if>
+                    <if condition="$produce_dets['pic'] neq ''">
+                        <img src="{$produce_dets['pic']}">
+                    </if>
+                </div>
+            </li>
+            <li style="margin:3px 0px;">商品圖片1：
+                <div>
+                    <if condition="$produce_dets['pic1'] eq ''">
+                        <img class="pic" src="__RZCSS__/upload.png" >
+                        <input class="upload" name="pic1" accept="image/*" type="file" style="display: none"/>
+                    </if>
+                    <if condition="$produce_dets['pic1'] neq ''">
+                        <img src="{$produce_dets['pic1']}">
+                    </if>
+                </div>
+            </li>
+            <li style="margin:3px 0px;">商品圖片2：
+                <div>
+                    <if condition="$produce_dets['pic2'] eq ''">
+                        <img class="pic" src="__RZCSS__/upload.png" >
+                        <input class="upload" name="pic2" accept="image/*" type="file" style="display: none"/>
+                    </if>
+                    <if condition="$produce_dets['pic2'] neq ''">
+                        <img src="{$produce_dets['pic2']}">
+                    </if>
+                </div>
+            </li>
+            <li style="margin:3px 0px;">商品圖片3：
+                <div>
+                    <if condition="$produce_dets['pic3'] eq ''">
+                        <img class="pic" src="__RZCSS__/upload.png" >
+                        <input class="upload" name="pic3" accept="image/*" type="file" style="display: none"/>
+                    </if>
+                    <if condition="$produce_dets['pic3'] neq ''">
+                        <img src="{$produce_dets['pic3']}">
+                    </if>
+                </div>
+            </li>
+            <li style="margin:3px 0px;">商品圖片4：
+                <div>
+                    <if condition="$produce_dets['pic4'] eq ''">
+                        <img class="pic" src="__RZCSS__/upload.png" >
+                        <input class="upload" name="pic4" accept="image/*" type="file" style="display: none"/>
+                    </if>
+                    <if condition="$produce_dets['pic4'] neq ''">
+                        <img src="{$produce_dets['pic4']}">
+                    </if>
+                </div>
+            </li>
+        </ul>
+        <style>
+            #inputa li p {
+                height: 10vmin;
+            }
+
+            #inputa li p input {
+                width: 15%;
+                vertical-align: middle;
+            }
+        </style>
+        <input type="hidden" class="province_id" value="{$info['province_id']}">
+        <input type="hidden" class="city_id" value="{$info['city_id']}">
+        <input type="hidden" class="country_id" value="{$info['country_id']}">
+        <input type="hidden" class="address_id" value="{$info['address_id']}">
+        <input type="hidden" class="type" value="{$type}">
+    </div>
+</form>
+<style>
+    .selectcc {
+        width: 83%;
+        border: none;
+        border-bottom: 1px solid #aaa;
+        font-family: "微軟雅黑";
+        /*很關鍵：將默認的select選擇框樣式清除*/
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        /*為下拉小箭頭留出壹點位置，避免被文字覆蓋*/
+        padding-right: 14px;
+    }
+</style>
+
+<div class="submit"><a href="javascript:void(0)" style="background:#ff6a31;"><eq name="id" value="">確認添加<else />確認修改</eq></a></div>
+
+<script>
+    $('.submit').click(function () {
+        $("#goodsinfo").submit();
+    })
+
+    function change_city() {
+        var pid = $("#province").val();
+        $.ajax({
+            url: "{:U('Shop/Home/Change_city')}",
+            data: {'pid': pid},
+            type: "post",
+            datatype: "json",
+            success: function (mes) {
+                if (mes.status == 1) {
+                    var data = mes.info;
+                    var str = '<option value="" selected="selected">--請選擇--</option>';
+                    $.each(data, function (i, v) {
+                        str += '<option value="' + v.id + '" selected="selected">' + v.name + '</option>';
+                    })
+                    $('#city').html(str);
+                }
+            }
+        })
+    }
+
+    function change_town() {
+        var pid = $("#city").val();
+
+        $.ajax({
+            url: "{:U('Shop/Home/Change_town')}",
+            data: {'pid': pid},
+            type: "post",
+            datatype: "json",
+            success: function (mes) {
+                if (mes.status == 1) {
+                    var data = mes.info;
+                    var str = '<option value="" selected="selected">--請選擇--</option>';
+                    $.each(data, function (i, v) {
+                        str += '<option value="' + v.id + '" selected="selected">' + v.name + '</option>';
+                    })
+
+                    $('#district').html(str);
+                } else {
+                    var str = '<option value="" selected="selected">暫無下級</option>';
+                    $('#district').html(str);
+                }
+            }
+        })
+    }
+</script>
+<script  type="text/javascript" charset="utf-8" async defer>
+    var E = window.wangEditor;
+    var editor2 = new E('#editor');
+     editor2.customConfig.menus = [
+        'head',  // 標題
+        'bold',  // 粗體
+        'italic',  // 斜體
+        'underline',  // 下劃線
+        'strikeThrough',  // 刪除線
+        'foreColor',  // 文字顏色
+        'justify',  // 對齊方式
+        'image',  // 插入圖片
+        'table',  // 表格
+    ];
+    editor2.customConfig.uploadImgServer = "{:U('Shop/Home/editUpload')}";
+    editor2.customConfig.uploadImgMaxLength = 5;
+    // editor2.customConfig.menus = [
+    //     'head',  // 標題
+    //     'bold',  // 粗體
+    //     'italic',  // 斜體
+    //     'underline',  // 下劃線
+    //     'strikeThrough',  // 刪除線
+    //     'foreColor',  // 文字顏色
+    //     'backColor',  // 背景顏色
+    //     'link',  // 插入鏈接
+    //     'list',  // 列表
+    //     'justify',  // 對齊方式
+    //     'quote',  // 引用
+    //     'emoticon',  // 表情
+    //     'image',  // 插入圖片
+    //     'table',  // 表格
+    //     'video',  // 插入視頻
+    //     'code',  // 插入代碼
+    //     'undo',  // 撤銷
+    //     'redo'  // 重復
+    // ];
+
+      // 自定義配置顏色（字體顏色、背景色）
+    editor2.customConfig.colors = [
+        '#000000',
+        '#eeece0',
+        '#1c487f',
+        '#4d80bf',
+        '#c24f4a',
+        '#8baa4a',
+        '#7b5ba1',
+        '#46acc8',
+        '#f9963b',
+        '#ffffff'
+    ];
+
+
+    var $text1 = $('#text1')
+    editor2.customConfig.onchange = function (html) {
+            // 監控變化，同步更新到 textarea
+            $text1.val(html);
+    }
+    editor2.create();
+    editor2.txt.html($text1.val());
+
+</script>
+
+<script>
+$(function() {
+  $(".pic").click(function () {
+    $(this).parent().find(".upload").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+      $(this).parent().find(".upload").on("change",function(){
+      var objUrl = getObjectURL(this.files[0]) ; //获取图片的路径，该路径不是图片在本地的路径
+      if (objUrl) {
+        $(this).parent().find(".pic").attr("src", objUrl) ; //将图片路径存入src中，显示出图片
+      }
+    });
+  });
+});
+
+function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
+</script>
+
+
+</body>
+</html>

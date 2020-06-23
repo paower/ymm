@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://bx.0755web.cn/Shangjia/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <title>認證中心</title>
+    <link rel="stylesheet" href="__RZCSS__/header.css">
+    <link rel="stylesheet" href="__RZCSS__/huiyuan.css">
+
+    <script type="text/javascript" src="__RZCSS__/upload.js"></script>
+    <script type="text/javascript" src="__RZCSS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="__RZCSS__/index.js"></script>
+    <script type="text/javascript" src="__RZCSS__/layer.js"></script>
+    <link rel="stylesheet" href="__RZCSS__/layer.css" id="layui_layer_skinlayercss" style="">
+
+    <script type="text/javascript" src="__RZCSS__/address.js"></script>
+<style>
+    .address {
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+
+    .address li {
+        line-height: 12vmin;
+        font-size: 4.2vmin;
+        background: #fff;
+        border-radius: 2vmin;
+        border: 1px solid #ddd;
+        margin-top: 3%;
+        text-indent: 1em;
+    }
+
+    .address li input {
+        width: 80%;
+        border: none;
+    }
+
+    .selectcc {
+        width: 83%;
+        border: none;
+        border-bottom: 1px solid #aaa;
+        font-family: "微軟雅黑";
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-right: 14px;
+    }
+
+    .address li p {
+        padding-left: 0;
+    }
+
+    .dzq {
+        width: 76%;
+        line-height: 5vmin;
+        border: none;
+        border-bottom: 1px solid #aaaaaa;
+    }
+
+</style></head>
+
+
+
+
+<body id="huise">
+<div class="fxm_header" style="background:#1b1b1b">
+    <div class="fxm_left"><a href="{:U('member/mine')}"><img src="__RZCSS__/left.png"></a></div>
+    <div class="fxm_center">認證中心</div>
+    <!-- <div class="fxm_right"><img src="/Public/home/wap/images/zf.png"></div> -->
+</div>
+<div class="top_top"></div>
+
+<form action="" method="post" enctype="multipart/form-data" id="msg">
+    <div class="shezhi qyrz3 smrz">
+        <input type="text" placeholder="姓名" name="realname" value="" class="abc">
+        <input type="text" placeholder="身份證號" name="idcard" value="" class="abc">
+        <input type="number" placeholder="手機號" name="phone" value="" class="abc">
+        <select name="d_type" id="cate" class="abc" style="padding:10px 0px;">
+            <option value="0">請選擇商鋪分類</option>
+            <volist name="d_type" id="vo">
+                <option value="{$vo['id']}" data-id="{$vo['id']}">{$vo['name']}</option>
+				<!-- <option value="{$vo['cate_id']}" data-id="{$vo['id']}">{$vo['name']}</option> -->
+            </volist>
+        </select>
+        <style>
+            .selectcc {
+                width: 83%;
+                border: none;
+                border-bottom: 1px solid #aaa;
+                font-family: "微軟雅黑";
+                /*很關鍵：將默認的select選擇框樣式清除*/
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                /*為下拉小箭頭留出壹點位置，避免被文字覆蓋*/
+                padding-right: 14px;
+
+            }
+			.renzheng_tishi{display:inline-block; width:92%; clear:both;}
+			.upload{clear:both;}
+			.renzheng_style{width:90%; margin-left:5%; padding-top:3vmin; padding-bottom:5vmin; clear:both;}
+			.renzheng_style li{display:inline-block; float:left; font-size:3.8vmin; padding-right:4.5vmin;}
+			.renzheng_style li span{display:inline-block; padding-left:1vmin;}
+			.divstyle2{display:none;}
+
+        </style>
+         <script type="text/javascript">
+        function test(obj) {
+            if (obj.id == "Radio1") {
+                document.getElementById("Div1").style.display = "none";
+                document.getElementById("Div2").style.display = "block";
+            }
+            else {
+                document.getElementById("Div1").style.display = "none";
+                document.getElementById("Div2").style.display = "block";
+            }
+        }
+    	</script>
+
+    <ul class="renzheng_style">
+		
+        <li>
+            <input id="Radio2" name="type" type="radio"  value="2" onclick="test(this)" checked /><span style="color: red">商家認證</span></li>
+    </ul>
+        <input type="hidden" id="cate_id" value="" name="cate_id" />
+    <!--商家認證-->
+    <div id="Div2" class="divstyle2" style="display:block">
+		<div class="upload">
+			<div id="preview4">
+				<img id="imghead4" width="100%" height="auto" border="0" src="__RZCSS__/y4.jpg">
+			</div>
+			<input type="file" onchange="previewImage4(this)" name="app_idcard_hands" class="tijiao4">
+			<span id="ckt"><img src="__RZCSS__/y03.jpg"></span>
+		</div>
+            <div class="upload">
+                <div id="preview5">
+                    <img id="imghead5" width="100%" height="auto" border="0" src="__RZCSS__/y1.jpg">
+                </div>
+                <input type="file" onchange="previewImage5(this)" name="app_blicense" class="tijiao5">
+                <span id="ckt"><img src="__RZCSS__/y04.jpg"></span>
+            </div>
+    </div>
+
+
+      <p class="renzheng_tishi">
+      認證提交後，工作人員會再3個工作日完成審核，如有疑問，請聯系客服&nbsp;
+      </p>
+  <p style="margin-top: 5%;">
+  <input type="checkbox" name="vehicle" class="vehicle" value="Car" checked="checked" style="vertical-align: middle;">同意協議
+  <a  href="{:U('member/agreem')}">
+  <i style="color: #f00">《入駐商家協議》</i>
+  </a>
+  </p>
+ <br/><br/>
+<p id='xieyi'></p>
+<!-- <input  id='xieyi' value=""> -->
+    </div>
+    <div class="buttones">
+
+
+                <a href="javascript:void(0)" class="doSubmit">提交申請</a>    </div>
+</form>
+
+
+
+<script>
+    $("#cate").change(function (){
+        // .attr('data-id')
+        cate_id = $('option:selected').attr('data-id');
+        console.log(cate_id);
+        $("#cate_id").val(cate_id);
+        
+    })
+
+
+    $('.doSubmit').click(function () {
+       var uname = $('input[name="realname"]').val();
+        var idcard = $.trim($('input[name="idcard"]').val());
+        var d_type = $('#cate option:selected').text();
+        var num = $('input[name="phone"]').val();
+        var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+
+        if (uname == '') {
+            msg_alert('請填寫姓名');
+            return;
+        }
+        if (!pattern.test(idcard)) {
+            msg_alert('請填寫正確的身份證號碼');
+            return;
+        }
+        if (num == '') {
+            msg_alert('請填寫手机号');
+            return;
+        }
+        if (d_type == '請選擇商鋪分類') {
+            msg_alert('請選擇商鋪分類');
+            return;
+        }
+        
+        //判斷是否選中
+        var ischecked = $('.vehicle').is(':checked');
+            if(ischecked){
+                $("#msg").submit();
+            }else{
+                msg_alert('請同意商城用戶協議');
+                return;
+            }
+    })
+</script>
+
+</body></html>

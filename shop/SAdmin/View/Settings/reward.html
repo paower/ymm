@@ -1,0 +1,103 @@
+<extend name="Public:base" />
+<block name="content">
+	<div class="page-header">
+		<h1>
+			奖励管理
+			<small>
+				<i class="icon-double-angle-right"></i>
+				奖励管理
+			</small>
+		</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-horizontal" id="form" method="post" action="{:U('Settings/saveReward')}">
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left" style="font-weight: bold;">买家</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">直推奖励(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="buy_firstReward" class="col-xs-10 col-sm-10 form-control" value="{$buy_firstReward * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">间推奖励(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="buy_secondReward" class="col-xs-10 col-sm-10 form-control" value="{$buy_secondReward * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">奖励进入充值(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="buyReward_to_rechar" class="col-xs-10 col-sm-10 form-control" value="{$buyReward_to_rechar * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">奖励进入商家JM(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="buyReward_to_shopEta" class="col-xs-10 col-sm-10 form-control" value="{$buyReward_to_shopEta * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left" style="font-weight: bold;">卖家</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">直推奖励(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="sell_firstReward" class="col-xs-10 col-sm-10 form-control" value="{$sell_firstReward * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">间推奖励(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="sell_secondReward" class="col-xs-10 col-sm-10 form-control" value="{$sell_secondReward * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">奖励进入充值(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="sellReward_to_rechar" class="col-xs-10 col-sm-10 form-control" value="{$sellReward_to_rechar * 100}" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-left">奖励进入商家JM(%)：</label>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<input name="sellReward_to_shopEta" class="col-xs-10 col-sm-10 form-control" value="{$sellReward_to_shopEta * 100}" type="number">
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="form-group">
+				<label class="col-sm-1 control-label no-padding-left"> </label>
+				<div class="col-sm-11">
+					<button form="form" type="submit" class="btn btn-sm btn-primary">提交</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>

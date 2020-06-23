@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>购卡</title>
+<link rel="stylesheet" href="__WCSS__/style.css">
+<link rel="stylesheet" href="__WCSS__/meCen.css">
+<script src="__WJS__/jquery1.11.1.min.js"></script>
+<script type="text/javascript" src="__COM__/layer/layer.js"></script>
+<script type="text/javascript" src="__COM__/js/index.js" ></script>
+<script type="text/javascript" src="__WJS__/jquery.form.js"></script>
+<body class="bg96 ">
+
+<div class="header">
+    <div class="header_l">
+        <a href="{:U('Growth/Option')}"><img src="__WIMG__/jiant.png" alt=""></a>
+    </div>
+    <div class="header_c"><h2>购卡</h2></div>
+    <div class="header_r"><a href="javascript:void(0)" id="hide"><img src="__WIMG__/moer_icon.png" alt=""></a>
+        <div id="p1">
+            <div class="down"></div>
+            <ul>
+                <li><a href="{:U('Growth/Record')}">购卡记录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form id='myupload' action="{:U('Growth/Recharge')}" method='post' enctype='multipart/form-data'>
+<div class="big_width100" style="margin-bottom:0px">
+
+    <div class="buy_aminy">
+        <h4>请选择购卡金额</h4>
+        <ul class="clear_wl">
+            <li class="buyChecked"><span>500</span></li>            
+            <li class="buyChecked"><span>1000</span></li>
+            <li class="buyChecked"><span>5000</span></li>
+            <li class="buyChecked"><span>10000</span></li>
+            <li class="buyChecked"><span>50000</span></li>
+        </ul>
+        <span style="color: black;font-size: 14px;">其他:</span><input style="height: 30px;
+    line-height: 30px;
+    width: 50%;
+    margin: 10px 2.5%;
+    background: #fff;
+    border: 1px solid #025486;
+    color: #025486;
+    text-align: left;
+    border-radius: 5px;" type="test" name="money2" value="">
+    </div>	
+    <!--已存在的银行卡-->
+    <eq name="morecars" value="">
+        <!--未添加银行卡-->
+        <div class="addCard">
+            <a href="{:U('Growth/Cardinfos')}">+{$Think.lang.addcard}</a>
+        </div>
+    <else />
+        <div class="haveCard">
+            <div class="bdingcard"><a href="{:U('Growth/Cardinfos',array('type'=>'Recharge'))}"><h4>
+                <if condition="$morecars['type'] eq 'bank'">
+                    绑定的收款账号
+                <elseif condition="$morecars['type'] eq 'wx'"/>
+                    {$Think.lang.bdwx}
+                <elseif condition="$morecars['type'] eq 'alipay'"/>
+                    {$Think.lang.bdalipay}
+                </if>
+            </h4>
+                <p>&#62</p></a></div>
+            <div class="cardInfo">
+                <if condition="$morecars['type'] eq 'bank'">
+                    <p>{$morecars['hold_name']}</p>
+                    <p>{$morecars['banq_genre']}</p>
+                    <p>收款账号:{$morecars['card_number']}</p>
+                    <input type="hidden" name="cardid" class="carnumber" value="{$morecars['id']}">
+                <elseif condition="$morecars['type'] eq 'wx'"/>
+                    <p>{$morecars['wx_name']}</p>
+                    <p>微信</p>
+                    <p>微信号:{$morecars['wx_num']}</p>
+                    <input type="hidden" name="cardid" class="carnumber" value="{$morecars['id']}">
+                <elseif condition="$morecars['type'] eq 'alipay'"/>
+                    <p>{$morecars['alipay_name']}</p>
+                    <p>支付宝</p>
+                    <p>支付宝:{$morecars['alipay_num']}</p>
+                    <input type="hidden" name="cardid" class="carnumber" value="{$morecars['id']}">
+                </if>
+            </div>
+
+        </div>
+    </eq>
+
+</div>
+<!--浮动层-->
+<div class="ftc_wzsf">
+    <div class="srzfmm_box">
+        <div class="qsrzfmm_bt clear_wl">
+            <img src="__WIMG__/xx_03.jpg" class="tx close fl">
+
+            <span class="fl">请输入支付密码</span></div>
+        <div class="zfmmxx_shop">
+
+        </div>
+        <ul class="mm_box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="numb_box">
+        <div class="xiaq_tb">
+            <img src="__WIMG__/jftc_14.jpg" height="10"></div>
+        <ul class="nub_ggg">
+            <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+            <li><a href="javascript:void(0);" class="zf_empty">清空</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+            <li><a href="javascript:void(0);" class="zf_del">删除</a></li>
+        </ul>
+    </div>
+    <div class="hbbj"></div>
+</div>
+
+<div class="haveCard por">
+	<div class="acco_con_up">
+		<p><b>小提示：请付款到以下账号后，点提交等待平台审核！</b></p>
+		<p>微信名称：<span>{$pingtai['wx_name']}</span></p>
+		<p>微信号：<span>{$pingtai['wx_num']}</span></p>
+		<p>微信二维码：<span style="color:#419aff; text-decoration:underline;"  onclick="wx_ck()" >查看</span></p>
+		<div style="display: none;" class="wx_img">
+			
+				<p>暂无记录</p>
+			
+				<img style="width:80%;" src="/uploads/{$pingtai['wx_qrcode']}" width="200px" /><br />
+			
+		</div>
+		<script>
+			function wx_ck(){
+				$('.wx_img').toggle();
+			}
+		</script>				
+		<p>付款名称：<span>{$pingtai['zfb_name']}</span></p>
+		<p>付款账号：<span>{$pingtai['zfb_num']}</span></p>
+		<p>付款二维码：<span style="color:#419aff; text-decoration:underline;"  onclick="zfb_ck()">查看</span></p>
+		<div style="display: none;" class="zfb_img">			
+			<p>暂无记录</p>			
+			<img style="width:80%;" src="/uploads/{$pingtai['zfb_qrcode']}"  width="200px"/><br />					
+		</div>
+		<script>
+			function zfb_ck(){
+				$('.zfb_img').toggle();
+			}
+		</script>
+		
+	</div>
+	<div class="acco_con_upa">
+			<h3>{$Think.lang.scdkjt}</h3>
+			<div class="shangcjt">
+				
+					<div class="containera"></div>
+					<input type="text" value="{$v['id']}" name="trid">
+					<input type="file" id="photo" name="uploadfile" class="shangcanj">
+				
+			</div>
+	</div>
+	
+</div>
+<input type="radio" name="agren" value="1"><span style="color:#000;">请同意</span><a href="/growth/user_agreem.html" style="color:red;">《JM商城用户协议》</a>
+<input type="hidden" value="" name="pwd">
+<input type="hidden" value="" name="sellnums">
+<input type="hidden" value="{$morecars['type']}" name="type">
+<div class="buttonGeoup" style="margin-top:60px;">
+    <a href="javascript:void(0);" class="exchange" id="cuanjdd">提交</a>
+</div>
+</form>
+<script type="text/javascript">
+
+    $(".buyChecked").on("click", function () {
+        $(this).addClass("on").siblings().removeClass("on");
+    })
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            
+            $("#p1").toggle(); //toggle() 方法切换元素的可见状态。 如果被选元素可见,则隐藏这些元素,如果被选元素隐藏,则显示这些元素。
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    $('.shangcanj').change(function (e) {
+        var old_this = $(this);
+        var files = this.files;
+        var img = new Image();
+        var reader = new FileReader();
+        reader.readAsDataURL(files[0]);
+        reader.onload = function (e) {
+            var dx = (e.total / 1024) / 1024;
+            if (dx >= 2) {
+                alert("文件不能大于2M");
+                return;
+            }
+            img.src = this.result;
+            img.style.width = "100%";
+            img.style.height = "90%";
+            img.id = "upload_img";
+            old_this.parents('#myupload').find('.containera').html(img);
+        }
+    })
+    $('#cuanjdd').on('click', function () {
+        var mairjie = $.trim($('.on').text()); //账号  //.trim() 去空格判断
+        agren = $("input[name='agren']:checked").val();
+        if(agren != 1){
+            msg_alert('请勾选《JM商城用户协议》');
+            return ;
+        }
+        var exg = /^[1-9]\d*|0$/;
+        var exg2 = $("input[name='money2']").val();
+        if (!exg.test(mairjie)&&!exg2) {
+            msg_alert('请选择购卡金额~');
+            return;
+        }
+        //是否存在银行卡
+        var carnumber = $('.carnumber').val();
+        if(carnumber == ''){
+            type = '{$morecars['type']}';
+            if(type == 'wx'){
+                msg_alert('请先添加微信');
+            }else if(type == 'alipay'){
+                msg_alert('请先添加支付宝');
+            }
+			msg_alert('请绑定收款账号');
+            return;
+        }
+        $(".ftc_wzsf").show();
+
+    });
+	$("input[name='money2']").click(function(){
+        $(".buyChecked").removeClass("on");
+		})
+    $(function () {
+        //关闭浮动
+        $(".close").click(function () {
+            $(".ftc_wzsf").hide();
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+        //数字显示隐藏
+        $(".xiaq_tb").click(function () {
+
+            $(".numb_box").slideUp(0);
+        });
+        $(".mm_box").click(function () {
+            $(".numb_box").slideDown(0);
+        });
+        //----
+        var i = 0;
+        $(".nub_ggg li .zf_num").click(function () {
+            if (i < 6) {
+                $(".mm_box li").eq(i).addClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", $(this).text());
+                i++
+                if (i == 6) {
+                    setTimeout(function () {
+                        var pwd = "";
+                        $(".mm_box li").each(function(){
+                            pwd += $(this).attr("data");
+                        });
+                        $("input[name='pwd']").val(pwd);
+                        //AJAX提交数据
+                        var sellnums = $.trim($('.on').text());//账号  //.trim() 去空格判断
+                        var cardid = $('.carnumber').val();//银行卡id
+                        var exg = /^[1-9]\d*|0$/;
+                        var money = $("input[name='money2']").val();
+                        if (!exg.test(sellnums)&&!money) {
+                            msg_alert('请选择购卡金额~');
+                            return;
+                        }
+                        if (cardid == '') {
+                            var type = '{$morecars['type']}';
+                            if (cardid == '') {
+                                 if(type == 'wx'){
+                                    msg_alert('请选择微信');
+                                }else{
+                                    msg_alert('请选择支付宝');
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                        agren = $("input[name='agren']:checked").val();
+                        if(agren != 1){
+                            msg_alert('请勾选《JM商城用户协议》');
+                            return ;
+                        }
+
+                        var uploadfile = $("input[name='sellnums']").val(sellnums);
+                        $("#myupload").ajaxSubmit({
+                            dataType: 'json', //数据格式为json
+                            success:function (mes) {
+                                if(mes.status == 1){
+                                    msg_alert(mes.message);
+                                    setTimeout(function(){window.location.reload()},1000);
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    i = 0;
+                                }else{
+                                    msg_alert(mes.message);
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    i = 0;
+                                }
+                            }
+                        });
+                       
+                    }, 100);
+                };
+            }
+        });
+
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
+                i--
+                $(".mm_box li").eq(i).removeClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", "");
+            }
+        });
+
+        $(".nub_ggg li .zf_empty").click(function () {
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

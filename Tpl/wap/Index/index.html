@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--title>{$Think.lang.ucenter}</title-->
+<title>Jamma</title>
+<link rel="stylesheet" href="__WCSS__/style.css">
+<link rel="stylesheet" href="__WCSS__/meCen.css">
+
+<!--线上JQ包-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--本地JQ包-->
+<!--<script src="__WJS__/jquery1.11.1.min.js"></script>-->
+
+
+<script type="text/javascript" src="__WJS__/jquery.glide.min.js"></script>
+<script type="text/javascript" src="__COM__/layer/layer.js"></script>
+<script type="text/javascript" src="__COM__/js/index.js"></script>
+<body class="bg96">
+<div class="header" style="height: 99px;">
+    <div class="header_l">
+        <!-- <a href="{:U('User/News')}"><img src="/Public/home/wap/images/news.png" alt=""></a> -->
+    </div>
+    <div class="header_c"><h2>交易</h2></div>
+    <div class="header_r">
+		
+	</div>
+</div>
+<div class="big_width100">	
+	<div class="slider bignonewidth" style="margin-top:46px;">
+		<ul class="slides">
+			<foreach name="pic_array" item="vo">
+				<li class="slide">
+					<div class="box" ><a href="{$vo['href']}"><img src="/Uploads/{$vo['picture']}" height="146px" alt="{$vo['title']}"></a></div>
+				</li>
+			</foreach>
+
+		</ul>
+	</div>
+    <div class="big_bagrag" style="position:relative; z-index:10;">
+		<div class="centBalance">
+			<div class="Balance">
+				<a class="balance" href="{:U('Index/recharge_record')}">
+					<img src="__WIMG__/index/libao.png" alt="">
+					<div class="info">
+						<!-- <p>兌換卡</p> -->
+						<strong><span  class="yue">{$moneyinfo['recharge_num']|Showtwo}</span></strong>
+					</div>		
+				</a>	
+			</div>
+			<div class="Balance">	
+					<a class="balance" href="{:U('Index/integral_record')}">
+						<img src="__WIMG__/index/integral.png">
+						<div class="info">
+							<!-- <p>JM</p> -->
+							<strong><span class="jifen">{$moneyinfo['fengmi_num']|showtwo}</span></strong>
+						</div>
+					</a>
+			</div>
+			
+			<div class="Balance">
+				<a class="balance" href="{:U('Index/balance_record',array('type'=>1))}">
+					<img src="__WIMG__/index/libao1.png" alt="">
+					<div class="info">
+						<!-- <p>消費JM</p> -->
+						<strong><span  class="yue">{$moneyinfo['cangku2_num']|Showtwo}</span></strong>
+					</div>		
+				</a>	
+			</div>
+			<div class="Balance">
+				<a class="balance" href="{:U('Index/balance_record',array('type'=>0))}">
+					<img src="__WIMG__/index/libao2.png" alt="">
+					<div class="info">
+						<!-- <p>商家JM</p> -->
+						<strong><span  class="yue">{$moneyinfo['cangku_num']|Showtwo}</span></strong>
+					</div>		
+				</a>	
+			</div>
+		</div>
+	</div>
+ <div class="cen_icon" style="margin-top: 0;">
+ <php>$quanxian=explode("-",$uinfo['quanxian']);</php>
+ 	 <ul>
+ 	 	<li>
+        <if condition="in_array(2,$quanxian)">
+        <a href="###"   class="quanxian">
+        <else/>
+        <a href="{:U('Index/turnout')}">
+        </if> 	 		
+ 	 			<img src="__WIMG__/index/icon-xia.png">
+ 	 			<p>转出JM</p>
+ 	 		</a>
+ 	 	</li>
+ 	 	<li>
+        <if condition="in_array(1,$quanxian)">
+        <a href="###"   class="quanxian">
+        <else/>
+            <a href="{:U('Growth/Intro')}">
+        </if> 
+ 	 			<img src="__WIMG__/index/icon-shang.png">
+ 	 			<p>转入JM</p>
+ 	 		</a>
+ 	 	</li>
+ 	 	<li>
+        <if condition="in_array(3,$quanxian)">
+        <a href="###"   class="quanxian">
+        <else/>
+        <a href="{:U('Growth/Option')}">
+        </if> 
+ 	 		
+ 	 			<img src="__WIMG__/index/icon-xiangzi.png">
+ 	 			<p>购卡</p>
+ 	 		</a>
+ 	 	</li>
+ 	 	<li>
+         <if condition="in_array(4,$quanxian)">
+        <a href="###"   class="quanxian">
+        <else/>
+            <a href="{:U('Trading/SellCentr')}">
+        </if> 
+
+ 	 			<img src="__WIMG__/index/icon-ok.png">
+ 	 			<p>提现</p>
+ 	 		</a>
+ 	 	</li>
+		
+		<li>
+				<a href="{:U('Shop/home/index')}">
+					<img src="__WIMG__/index/icon-cart.png">
+					<p>商城</p>
+				</a>
+		  </li>
+		
+ 	 	<li>
+			<a href="###"   class="xianzjiaoy"> 
+				   <a href="{:U('User/News')}">
+					  <img src="__WIMG__/index/set08.png">
+					  <p>公告</p>
+				  </a>
+			  </li>
+		  
+		 <li>
+			 <a href="###"   class="xianzjiaoy">
+				 <!-- <a href="{:U('Index/exehange')}"> -->
+				 <a href="javascript:layer.msg('暂未开放~');">
+					 <img src="__WIMG__/index/icon-juxing.png">
+					 <p>兑换</p>
+				 </a>
+		 </li>
+
+		 
+
+
+		 <li>
+			 <a href="###"   class="xianzjiaoy">
+				<a href="{:U('User/Teamdets')}">
+					<img src="__WIMG__/index/icon-geren.png">
+					<p>团队</p>
+				</a>
+		 </li>
+
+				
+		  <li>
+				<a href="###"   class="xianzjiaoy">
+					<a href="{:U('User/Sharecode')}">
+						<img src="__WIMG__/index/icon-liwu.png">
+						<p>分享</p>
+					</a>
+			</li>
+		
+ 	 </ul>
+ </div>
+</div>
+<div class="footer-fan">
+	<a href="{:U('Index/index')}">
+		<img src="__WIMG__/index/shouye3.png" alt="交易" id="shouye">
+		<p>交易</p>
+	</a>
+	<a href="{:U('Index/signin')}">
+		<img src="__WIMG__/index/zichan2.png" alt="簽到">
+		<p>签到</p>
+	</a>
+	<a href="{:U('Shop/home/index')}">
+		<img src="__WIMG__/index/consumptionico.png" alt="商城">
+		<p>商城</p>
+	</a>
+	<!-- <a href="#" onclick="msgAlert()">
+		<img src="__WIMG__/index/shangcheng2.png" alt="發現">
+		<p>發現</p>
+	</a> -->
+	<a href="{:U('User/Personal')}">
+		<img src="__WIMG__/index/wo2.png" alt="我的">
+		<p>我的</p>
+	</a>
+	<div id="kefu2" style="background:#fff;float: left;border: 1px solid #dcdcdc;font-size: 14px;width: 50px;height: 50px; position: absolute;right: 10px;bottom: 50px;display: none;">
+		<span style="float: left;padding-left: 3px;height: 25px;line-height: 25px;border-bottom:1px solid #dcdcdc;width: 40px;"><a href="{:U('liuyan/weixin')}">微信</a></span>
+		<span style="float: left;padding-left: 11px;height: 25px;line-height: 25px;"><a href="{:U('user/Complaint')}" >留言</a> </span>
+	</div>
+	<a href="#" id="kefu">
+		<img src="__WIMG__/index/kefu.png" alt="我的" id="kefuimg">
+		<p>客服</p>
+	</a>
+</div>
+
+  <script type="text/javascript">
+		function msgAlert(){
+		msg_alert('暫未開放，敬請期待！')
+	}
+</script>
+
+<script type="text/javascript">
+	
+	// 公告循環
+	(function (win){ 
+		var callboarTimer; 
+		var callboard = $('#callboard'); 
+		var callboardUl = callboard.find('ul'); 
+		var callboardLi = callboard.find('li'); 
+		var liLen = callboard.find('li').length; 
+		var initHeight = callboardLi.first().outerHeight(true); 
+		// console.log(callboardLi.first().outerHeight(true));
+		win.autoAnimation = function (){ 
+			if (liLen <= 1) return; 
+			var self = arguments.callee; 
+			var callboardLiFirst = callboard.find('li').first(); 
+			callboardLiFirst.animate({ 
+				marginTop:-initHeight 
+			}, 500, function (){ 
+				clearTimeout(callboarTimer); 
+				callboardLiFirst.appendTo(callboardUl).css({marginTop:0}); 
+				callboarTimer = setTimeout(self, 5000); 
+			}); 
+		} 
+		callboard.mouseenter( 
+		function (){ 
+			clearTimeout(callboarTimer); 
+		}).mouseleave(function (){ 
+			callboarTimer = setTimeout(win.autoAnimation, 5000); 
+		}); 
+	}(window)); 
+	setTimeout(window.autoAnimation, 5000); 
+
+
+
+    $("#hide").click(function(){
+		$.ajax({
+			url:'/Index/index',
+			type:'post',
+			datatype:'json',
+			success:function (mes) {
+				if(mes.status == 1){
+                    //alert(mes.message);
+				    msg_alert(mes.message,mes.url);
+                    $("#hide_none").hide(1000);
+                    location.href="";
+				}else{
+
+                    msg_alert(mes.message);
+                }
+            }
+		})
+    });
+</script>
+
+<script type="text/javascript">
+    var glide = $('.slider').glide({
+        //autoplay:true,//是否自動播放 默認值 true如果不需要就設置此值
+        animationTime:500, //動畫過度效果，只有當瀏覽器支持CSS3的時候生效
+        arrows:false, //是否顯示左右導航器
+        arrowsWrapperClass: "arrowsWrapper",//滑塊箭頭導航器外部DIV類名
+        arrowMainClass: "slider-arrow",//滑塊箭頭公共類名
+        arrowRightClass:"slider-arrow--right",//滑塊右箭頭類名
+        arrowLeftClass:"slider-arrow--left",//滑塊左箭頭類名
+        arrowRightText:">",//定義左右導航器文字或者符號也可以是類
+        arrowLeftText:"<",
+
+        nav:true, //主導航器也就是本例中顯示的小方塊
+        navCenter:true, //主導航器位置是否居中
+        navClass:"slider-nav",//主導航器外部div類名
+        navItemClass:"slider-nav__item", //本例中小方塊的樣式
+        navCurrentItemClass:"slider-nav__item--current" //被選中後的樣式
+    });
+</script>
+</body>
+
+</html>
+<script type="text/javascript">
+	$('#kefu').click(function(){
+		var status = $('#kefu2').css('display');
+		if(status=="none"){
+			$('#shouye').attr('src',"__WIMG__/index/shouye2.png");
+			$('#kefuimg').attr('src',"__WIMG__/index/kefu2.png");
+			$('#kefu2').css('display',"inline");
+		}else{
+			$('#shouye').attr('src',"__WIMG__/index/shouye3.png");
+			$('#kefuimg').attr('src',"__WIMG__/index/kefu.png");
+			$('#kefu2').css('display',"none");
+		}
+	});
+</script>

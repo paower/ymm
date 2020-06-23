@@ -1,0 +1,71 @@
+<extend name="Public/layout"/>
+<block name="style" >
+    <link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+</block>
+
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <foreach name="_menu_tab['name']" item="tab_v" >
+            <li class="text-muted">{$tab_v}</li>
+            </foreach>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="panel-body">
+                <div class="builder formbuilder-box">
+                        
+                        <div class="form-group"></div>
+
+                        <!-- 顶部工具栏按钮 -->
+                        <div class="builder-toolbar">
+                            <div class="row">
+                                <!-- 工具栏按钮 -->
+                                    <!-- <div class="col-xs-12 col-sm-8 button-list clearfix"> -->
+                                        <!-- <div class="form-group"> -->
+                                            <!-- <a title="新增" class="btn btn-primary-outline btn-pill" href="{:U('News/add')}">新增</a>&nbsp; -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+
+                                <!-- 搜索框 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 数据列表 -->
+                        <div class="builder-container">
+                            <form action="{:U('News/sharecodebj')}" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <hr/>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" name="bj">分享页背景</label>
+                                    <div class="col-sm-9">            
+                                        <input type="file" name="bj"/>  
+                                        <if condition="$list['image'] neq ''">
+                                            <img width="273px" height="auto" src="/Uploads/{$list.image}">
+                                        </if>        
+                                    </div>                                                   
+                                </div>
+                                <hr/>
+                                <div class="form-group bottom_button_list">                          
+                                   <button class="btn btn-primary" type="submit">确定</button>
+                                    <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+    </div>                   
+</div>
+</block>
+
+<block name="script">
+    <script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+</block>

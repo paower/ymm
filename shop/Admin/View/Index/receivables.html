@@ -1,0 +1,136 @@
+<extend name="Public/layout"/>
+<block name="style" >
+    <link rel="stylesheet" type="text/css" href="__LYUI__/css/lyui.extend.min.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN_CSS__/style.css">
+</block>
+
+<block name="main">
+   <div id="main" class="col-xs-12 col-sm-9 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <foreach name="_menu_tab['name']" item="tab_v" >
+            <li class="text-muted">{$tab_v}</li>
+            </foreach>
+            <li class="text-muted">{:isset($info)?'修改':新增}</li>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="panel-body">
+                <div class="builder formbuilder-box">
+                    <div class="form-group"></div>
+                    <div class="builder-container" >
+                            <div class="row" >
+                                <div class="col-xs-12">
+                                    <form action="" method="post" class="form-horizontal form form-builder" enctype="multipart/form-data" >
+                                        <div class="form-type-list">
+                                            <div class="form-group hidden item_id ">
+                                                <label class="left control-label">ID：</label>
+                                                <div class="right">
+                                                    <input type="hidden" class="form-control input" name="id" value="{$info.id}">
+                                                </div>
+                                            </div>
+                                            
+											<!-- 银行信息 开始-->
+												<!-- <div class="form-group"> -->
+                                                    <!-- <label class="col-sm-3 control-label">收款开户银行：</label> -->
+                                                    <!-- <div class="col-sm-3"> -->
+                                                        <!-- <input  type="text" id="bank_name" class="form-control" name="bank_name" value="{$bank.bank_name}"> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+												<!-- <div class="form-group"> -->
+                                                    <!-- <label class="col-sm-3 control-label">开户名：</label> -->
+                                                    <!-- <div class="col-sm-3"> -->
+                                                        <!-- <input  type="text" id="hold_name" class="form-control" name="hold_name" value="{$bank.hold_name}"> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="form-group"> -->
+                                                    <!-- <label class="col-sm-3 control-label">开户账号：</label> -->
+                                                    <!-- <div class="col-sm-3"> -->
+                                                        <!-- <input  type="text" id="card_number" class="form-control" name="card_number" value="{$bank.card_number}"> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+												<!-- <div class="form-group"> -->
+                                                    <!-- <label class="col-sm-3 control-label">支行信息：</label> -->
+                                                    <!-- <div class="col-sm-3"> -->
+                                                        <!-- <input  type="text" id="open_card" class="form-control" name="open_card" value="{$bank.open_card}"> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+												<!-- <div style="border-bottom:1px solid #dedede;" class="form-group"></div> -->
+											<!-- 银行信息 结束-->
+											<!-- 支付宝信息 开始-->
+												<div class="form-group">
+                                                    <label class="col-sm-3 control-label">收款名称：</label>
+                                                    <div class="col-sm-3">
+                                                        <input  type="text" id="zfb_name" class="form-control" name="zfb_name" value="{$bank.zfb_name}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">收款账号：</label>
+                                                    <div class="col-sm-3">
+                                                        <input  type="text" id="zfb_num" class="form-control" name="zfb_num" value="{$bank.zfb_num}">
+                                                    </div>
+                                                </div>      
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" name="picture">二维码：</label>
+                                                    <div class="col-sm-9">            
+                                                        <input type="file" name="zfb_qrcode"/>  
+                                                        <notempty name="$bank.zfb_qrcode">
+                                                                <img width="273px" height="120px" src="/Uploads/{$bank.zfb_qrcode}">       
+                                                        </notempty>
+                                                         <img width="150px" src="/Uploads/{$bank.zfb_qrcode}">             
+                                                    </div>                                                   
+                                                </div>
+												<div style="border-bottom:1px solid #dedede;" class="form-group"></div>
+											<!-- 支付宝信息 结束-->
+											<!-- 微信信息 开始-->
+												<div class="form-group">
+                                                    <label class="col-sm-3 control-label">微信名称：</label>
+                                                    <div class="col-sm-3">
+                                                        <input  type="text" id="wx_name" class="form-control" name="wx_name" value="{$bank.wx_name}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">微信号：</label>
+                                                    <div class="col-sm-3">
+                                                        <input  type="text" id="wx_num" class="form-control" name="wx_num" value="{$bank.wx_num}">
+                                                    </div>
+                                                </div>      
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" name="wx_qrcode">二维码：</label>
+                                                    <div class="col-sm-9">            
+                                                        <input type="file" name="wx_qrcode"/>  
+                                                        <notempty name="$bank.wx_qrcode">
+                                                                <img width="273px" height="120px" src="/Uploads/{$bank.wx_qrcode}">       
+                                                        </notempty>
+                                                         <img width="150px" src="/Uploads/{$bank.wx_qrcode}">             
+                                                    </div>                                                   
+                                                </div>
+											<!-- 微信信息 结束-->												
+                                        <div class="form-group"></div>
+                                        <div class="form-group bottom_button_list">                          
+                                           <button class="btn btn-primary" type="submit">确定</button>
+                                            <a class="btn btn-danger return" onclick="javascript:history.back(-1);return false;">取消</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>                   
+</div>
+</block>
+
+<block name="script">
+    <script>
+        
+	
+
+    </script>
+    <script type="text/javascript" src="__LYUI__/js/lyui.extend.min.js"></script>
+</block>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+  <title>支付</title>
+  <link rel="stylesheet" href="__CSS__/3db_style.css">
+  <link rel="stylesheet" href="__ICON__/3db_iconfont.css">
+  <link rel="stylesheet" href="/Public/home/wap/css/meCen.css">
+
+  <!-- 轮播图 -->
+  <script type="text/javascript" src="__JS__/jquery-1.7.1.min.js"></script>
+
+  <script type="text/javascript" src="__JS__/jquery.touchSlider.js"></script>
+  <script type="text/javascript" src="__JS__/js.js"></script>
+  <script type="text/javascript" src="__JS__/3db_layer.js"></script>
+
+</head>
+<body>
+  <!-- 轮播图 -->
+    <div class="fxm_header">
+       <div class="fxm_left">
+           <a href="javascript:history.go(-1)"><img src="__IMG__/b1.png" alt=""></a>
+       </div>
+       <div class="fxm_center">{$title|default='支付'}</div>
+    </div>
+     <body style="background: #f6f5fb;" data-id="{$order['order_no']}">
+
+
+<link rel="stylesheet" href="__CSS__/dizhi.css">
+<div style="margin-top: 13vmin"></div>
+<style type="text/css">
+  label{
+    width: 80%;
+    display: inline-block;
+  }
+
+</style>
+<foreach name='order' item='v'>
+<div class="commoditys">
+  
+  
+  <div class="commoditys-right">
+
+
+    <?php
+    $dianpu=M('gerenshangpu')->where('userid',$v['order_sellerid'])->find();
+    ?>
+  <!-- <h1>店铺名称：{$dianpu.shop_name}</h1> -->
+    <h3 style="color: black";>订单号：<span class="commodityspan">{$v.order_no}</span></h3>
+    <h3 style="color: inherit;" >订单总额：<span class="commodityspan" style="color:#FF2626" >￥{$v.buy_price}</span></h3>
+
+  </div>
+ 
+</div>
+ </foreach>
+<div class="clear"></div>
+<form method="get" action="{:U('pay/pays')}">
+  <div class="methods">
+    <h1>请选择支付方式</h1>
+    <if condition="in_array('0',$zhifupay)">
+		<if condition="$pay_shangjiajm neq 0">
+		  <p>
+			<i class="iconfont" style="color: #f04f37">&#xe60e;</i>
+			<label for="money">商家JM（可用：{$cangku_num}元）</label>
+			<input  type="radio" checked name="type" value="0">
+		  </p>
+		</if>
+    </if>
+    <if condition="in_array('2',$zhifupay)">
+		<if condition="$pay_xiaofeijm neq 0">
+		  <p>
+			<i class="iconfont" style="color: #f04f37">&#xe60e;</i>
+			<label for="money">消费JM（可用：{$cangku2_num}元）</label>
+			<input type="radio" name="type" value="2">
+		  </p>
+		</if>
+    </if>
+    <if condition="in_array('1',$zhifupay)">
+		<if condition="$pay_duihuan neq 0">
+		  <p>
+			<i class="iconfont" style="color: #f04f37">&#xe60e;</i>
+			<label for="money">兑换卡（可用：{$recharge_num}元）</label>
+			<input type="radio" name="type" value="1">
+		  </p>
+		</if>
+    </if>
+	<if condition="in_array('3',$zhifupay)">
+        <if condition="$pay_duihuan neq 0">
+      <p>
+        <i class="iconfont" style="color: #f04f37">&#xe60e;</i>
+        <label for="money">微信支付</label>
+        <input type="radio" name="type" value="3">
+      </p>
+        </if>
+    </if>
+    注:选择商家JM/兑换卡支付,最高可获120%JM奖励
+	
+  </div>
+  <!--浮动层-->
+  <div class="ftc_wzsf">
+    <div class="srzfmm_box">
+        <div class="qsrzfmm_bt clear_wl">
+            <img src="/Public/home/wap/images/xx_03.jpg" class="tx close fl">
+
+            <span class="fl">请输入支付密码</span></div>
+        <div class="zfmmxx_shop">
+
+        </div>
+        <ul class="mm_box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="numb_box">
+        <div class="xiaq_tb">
+            <img src="/Public/home/wap/images/jftc_14.jpg" height="10"></div>
+        <ul class="nub_ggg">
+            <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+            <li><a href="javascript:void(0);" class="zf_empty">{$Think.lang.emptya}</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+            <li><a href="javascript:void(0);" class="zf_del">{$Think.lang.deleteo}</a></li>
+        </ul>
+    </div>
+    <div class="hbbj"></div>
+</div>
+
+
+
+  <div class="lijizhifu">
+      <button style="color: #fff;text-decoration: none;background: none;border: none;font-size: 18px;" id="cuanjdd" type="button">立即支付</button>
+  	 
+  </div>
+  <input type="hidden" id="oid" name="oid" value="{$order[0]['order_id']}" >
+</form>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    /*选中消费积分支付不显示赠送积分*/
+    $("input[name='paytype']").change(function () {
+        var pay_type = $("input[name='paytype']:checked").val();
+        if (pay_type == 4) {
+            $('.paytypes').hide();
+        } else {
+            $('.paytypes').show();
+        }
+    });
+
+    $("#pay_yes").click(function () {
+        $("#shadow_div").show("200");
+    });
+
+    $("#pay_close").click(function () {
+        $("#shadow_div").hide("200");
+    });
+
+
+    $("#pay_submit").click(function () {
+        //验证数据
+        var pay_type = $("input[name='paytype']:checked").val();
+        var ono = $("body").attr("data-id");
+        var pwd = $("input[name='pay_pwd']").val();
+        var or_no = $("body").attr("data-id");
+        $(".order_no").val(ono);
+        /*选择积分类型*/
+        var jifentypes = $("#jifentype").val();
+
+        if (!pwd) {
+            layer.msg('请输入二级密码', {icon: 5,time: 1500});
+            return;
+        }
+
+        if (!ono) {
+            layer.msg('该订单不存在', {icon: 5,time: 1500});
+            return;
+        }
+
+        $.post("/Shop/Pay/pay", {ptype: pay_type, ono: ono, pwd: pwd, jifentypes: jifentypes}, function (data) {
+            if (data.status == "1") {
+                if(data.info == 2){
+                    window.location.href = "{:U('Shop/pay/apily',array('order_no'=>$order['order_no']))}";
+                    return;
+                }
+                layer.msg(data.info, {icon: 1,time: 1500}, function () {
+                    $("#shadow_div").hide("200");
+                    window.location.href = "{:U('/shop/home/index')}";
+                });
+            } else {
+                layer.msg(data.info, {shift: -1, time: 1500}, function () {
+                });
+            }
+        }, "json");
+    });
+</script>
+
+
+
+<script type="text/javascript">
+    $(".codeimg").click(function(){
+        var img = $(this).attr("src");
+
+        shop_qrcode(img);
+
+    });
+    function shop_qrcode(img){
+        layer.open({
+          type: 1,
+          title: false,
+          shadeClose: true,
+          closeBtn: false,
+          shade: 0.5,
+          area: ['250', '250'],
+          content: '<img   src="'+img+'" style="width:250px;height:250px;display:block;margin:0 auto;">' //iframe的url
+        });
+
+    }
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    $('#cuanjdd').on('click', function () {
+        var type = $(':radio[name="type"]:checked').val();
+        if(typeof(type)=='undefined'){
+            alert('请选择支付方式');
+        }else{
+            $("#p1").hide(); //toggle() 方法切换元素的可见状态。 如果被选元素可见,则隐藏这些元素,如果被选元素隐藏,则显示这些元素。
+
+            // var mairjie = $.trim($('.on').text()); //账号  //.trim() 去空格判断
+            // var exg = /^[1-9]\d*|0$/;
+            // if (!exg.test(mairjie)) {
+            //     msg_alert('请选择卖出金额~');
+            //     return;
+            // }
+            //是否存在银行卡
+            // var carnumber = $('.carnumber').val();
+            // if(carnumber == ''){
+            //     type = '{$morecars['type']}';
+            //     if(type == 'bank'){
+            //         msg_alert('请先添加银行卡~');
+            //     }else if(type == 'wx'){
+            //         msg_alert('请先添加微信');
+            //     }else if(type == 'alipay'){
+            //         msg_alert('请先添加支付宝');
+            //     }
+            //     return;
+            // }
+            $(".ftc_wzsf").show();
+        }
+    });
+
+    $(function () {
+        //关闭浮动
+        $(".close").click(function () {
+            $(".ftc_wzsf").hide();
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+        //数字显示隐藏
+        $(".xiaq_tb").click(function () {
+            $(".numb_box").slideUp(50000);
+        });
+        $(".mm_box").click(function () {
+            $(".numb_box").slideDown(50000);
+        });
+        //----
+        var i = 0;
+        $(".nub_ggg li .zf_num").click(function () {
+
+            if (i < 6) {
+                $(".mm_box li").eq(i).addClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", $(this).text());
+                i++
+                if (i == 6) {
+                    setTimeout(function () {
+                        var pwd = "";
+                        $(".mm_box li").each(function(){
+                            pwd += $(this).attr("data");
+                        });
+                        //AJAX提交数据
+                        // var sellnums = $.trim($('.on').text()); //账号  //.trim() 去空格判断
+                        // var cardid = $('.carnumber').val();//银行卡id
+                        // var messge = $('.messge').val();
+                        // var exg = /^[1-9]\d*|0$/;
+                        // if (!exg.test(sellnums)) {
+                        //     msg_alert('请选择买入金额~');
+                        //     return;
+                        // }
+                        // var type = '{$morecars['type']}';
+                        // if (cardid == '') {
+                        //     if(type == 'bank'){
+                        //         msg_alert('请选择银行卡');
+                        //     }else if(type == 'wx'){
+                        //         msg_alert('请选择微信');
+                        //     }else{
+                        //         msg_alert('请选择支付宝');
+                        //     }
+                        //     return;
+                        // }
+                        $.ajax({
+                            url:'{:U("pay/checkpwd")}',
+                            type:'post',
+                            data:{'pwd':pwd},
+                            datatype:'json',
+                            success:function (mes) {
+                                if(mes.status == 1){
+                                    // msg_alert(mes.message);
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    $('form').submit();
+                                }else{
+                                    alert(mes.message);
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    i = 0;
+                                }
+                            }
+                        })
+                    }, 100);
+                };
+            }
+        });
+
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
+                i--
+                $(".mm_box li").eq(i).removeClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", "");
+            }
+        });
+
+        $(".nub_ggg li .zf_empty").click(function () {
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+
+    });
+</script>

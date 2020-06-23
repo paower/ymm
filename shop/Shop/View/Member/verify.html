@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://bx.0755web.cn/Shangjia/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <title>认证中心</title>
+    <link rel="stylesheet" href="__RZCSS__/header.css">
+    <link rel="stylesheet" href="__RZCSS__/huiyuan.css">
+
+    <script type="text/javascript" src="__RZCSS__/upload.js"></script>
+    <script type="text/javascript" src="__RZCSS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="__RZCSS__/index.js"></script>
+    <script type="text/javascript" src="__RZCSS__/layer.js"></script>
+    <link rel="stylesheet" href="__RZCSS__/layer.css" id="layui_layer_skinlayercss" style="">
+
+    <script type="text/javascript" src="__RZCSS__/address.js"></script>
+<style>
+    .address {
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+
+    .address li {
+        line-height: 12vmin;
+        font-size: 4.2vmin;
+        background: #fff;
+        border-radius: 2vmin;
+        border: 1px solid #ddd;
+        margin-top: 3%;
+        text-indent: 1em;
+    }
+
+    .address li input {
+        width: 80%;
+        border: none;
+    }
+
+    .selectcc {
+        width: 83%;
+        border: none;
+        border-bottom: 1px solid #aaa;
+        font-family: "微软雅黑";
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-right: 14px;
+    }
+
+    .address li p {
+        padding-left: 0;
+    }
+
+    .dzq {
+        width: 76%;
+        line-height: 5vmin;
+        border: none;
+        border-bottom: 1px solid #aaaaaa;
+    }
+
+</style>
+<style media="screen">
+  .pic{
+      width:190px;
+      height:100px;
+      margin:20px auto;
+      cursor: pointer;
+      background-image: url(./nike3.jpeg);
+      background-size: cover;
+      }
+  </style>
+</head>
+
+
+
+
+<body id="huise">
+<div class="fxm_header" style="background:#1b1b1b">
+    <div class="fxm_left"><a href="{:U('member/mine')}"><img src="__RZCSS__/left.png"></a></div>
+    <div class="fxm_center">认证中心</div>
+    <!-- <div class="fxm_right"><img src="/Public/home/wap/images/zf.png"></div> -->
+</div>
+<div class="top_top"></div>
+
+<form action="" method="post" enctype="multipart/form-data" id="msg">
+    <div class="shezhi qyrz3 smrz">
+        <input type="text" placeholder="姓名" name="realname" value="" class="abc">
+        <input type="text" placeholder="身份证号" name="idcard" value="" class="abc">
+        <input type="number" placeholder="手机号" name="phone" value="" class="abc">
+        <select name="d_type" id="cate" class="abc" style="padding:10px 0px;">
+            <option value="0">请选择商铺分类</option>
+            <volist name="d_type" id="vo">
+                <option value="{$vo['id']}" data-id="{$vo['id']}">{$vo['name']}</option>
+				<!-- <option value="{$vo['cate_id']}" data-id="{$vo['id']}">{$vo['name']}</option> -->
+            </volist>
+        </select>
+        <style>
+            .selectcc {
+                width: 83%;
+                border: none;
+                border-bottom: 1px solid #aaa;
+                font-family: "微软雅黑";
+                /*很关键：将默认的select选择框样式清除*/
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+                padding-right: 14px;
+
+            }
+			.renzheng_tishi{display:inline-block; width:92%; clear:both;}
+			.upload{clear:both;}
+			.renzheng_style{width:90%; margin-left:5%; padding-top:3vmin; padding-bottom:5vmin; clear:both;}
+			.renzheng_style li{display:inline-block; float:left; font-size:3.8vmin; padding-right:4.5vmin;}
+			.renzheng_style li span{display:inline-block; padding-left:1vmin;}
+			.divstyle2{display:none;}
+
+        </style>
+         <script type="text/javascript">
+        function test(obj) {
+            if (obj.id == "Radio1") {
+                document.getElementById("Div1").style.display = "none";
+                document.getElementById("Div2").style.display = "block";
+            }
+            else {
+                document.getElementById("Div1").style.display = "none";
+                document.getElementById("Div2").style.display = "block";
+            }
+        }
+    	</script>
+
+    <ul class="renzheng_style">
+		
+        <li>
+            <input id="Radio2" name="type" type="radio"  value="2" onclick="test(this)" checked /><span style="color: red">商家认证</span></li>
+    </ul>
+        <input type="hidden" id="cate_id" value="" name="cate_id" />
+    <!--商家认证-->
+    <div id="Div2" class="divstyle2" style="display:block">
+        <div class="upload">
+            <div>
+                <img class="pic" src="__RZCSS__/y4.jpg" >
+                <input class="upload" name="app_idcard_hands" accept="image/*" type="file" style="display: none"/>
+            <span id="ckt"><img src="__RZCSS__/y03.jpg"></span>
+            </div>
+        </div>
+            <div class="upload">
+                <div>
+                    <img class="pic" src="__RZCSS__/y1.jpg" >
+                    <input class="upload" name="app_blicense" accept="image/*" type="file" style="display: none"/>
+                <span id="ckt"><img src="__RZCSS__/y04.jpg"></span>
+                </div>
+            </div>
+    </div>
+
+
+      <p class="renzheng_tishi">
+      认证提交后，工作人员会再3个工作日完成审核，如有疑问，请联系客服&nbsp;
+      </p>
+  <p style="margin-top: 5%;">
+  <input type="checkbox" name="vehicle" class="vehicle" value="Car" checked="checked" style="vertical-align: middle;">同意协议
+  <a  href="{:U('member/agreem')}">
+  <i style="color: #f00">《入驻商家协议》</i>
+  </a>
+  </p>
+ <br/><br/>
+<p id='xieyi'></p>
+<!-- <input  id='xieyi' value=""> -->
+    </div>
+    <div class="buttones">
+
+
+                <a href="javascript:void(0)" class="doSubmit">提交申请</a>    </div>
+</form>
+
+
+
+<script>
+    $("#cate").change(function (){
+        // .attr('data-id')
+        cate_id = $('option:selected').attr('data-id');
+        console.log(cate_id);
+        $("#cate_id").val(cate_id);
+        
+    })
+
+
+    $('.doSubmit').click(function () {
+       var uname = $('input[name="realname"]').val();
+        var idcard = $.trim($('input[name="idcard"]').val());
+        var d_type = $('#cate option:selected').text();
+        var num = $('input[name="phone"]').val();
+        var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+
+        if (uname == '') {
+            msg_alert('请填写姓名');
+            return;
+        }
+        if (!pattern.test(idcard)) {
+            msg_alert('请填写正确的身份证号码');
+            return;
+        }
+        if (num == '') {
+            msg_alert('请填写手机号');
+            return;
+        }
+        if (d_type == '请选择商铺分类') {
+            msg_alert('请选择商铺分类');
+            return;
+        }
+        
+        //判断是否选中
+        var ischecked = $('.vehicle').is(':checked');
+            if(ischecked){
+                $("#msg").submit();
+            }else{
+                msg_alert('请同意商城用户协议');
+                return;
+            }
+    })
+</script>
+
+<script>
+$(function() {
+  $(".pic").click(function () {
+    $(this).parent().find(".upload").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+      $(this).parent().find(".upload").on("change",function(){
+      var objUrl = getObjectURL(this.files[0]) ; //获取图片的路径，该路径不是图片在本地的路径
+      if (objUrl) {
+        $(this).parent().find(".pic").attr("src", objUrl) ; //将图片路径存入src中，显示出图片
+      }
+    });
+  });
+});
+
+function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
+</script>
+
+</body></html>

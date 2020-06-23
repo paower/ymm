@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>转入</title>
+<link rel="stylesheet" href="__WCSS__/style.css">
+<link rel="stylesheet" href="__WCSS__/meCen.css">
+<script src="__WJS__/jquery1.11.1.min.js"></script>
+<script type="text/javascript" src="__COM__/layer/layer.js" ></script>
+
+<body class="bg96 bg_blue">
+	
+	<div class="header">
+	    <div class="header_l" style="width:33.3%;">
+	    <a href="{:U('Index/index')}"><img src="__WIMG__/jiant.png" alt=""></a>
+	    </div>
+	    <div class="header_c" style="width:33.3%;"><h2>转入</h2></div>
+	    <div class="header_r" style="width:33.3%;"><a href="/Growth/test?filename=.{$urel}">保存二维码</a></div>
+	</div>
+
+       <div class="big_width">
+	       
+	     <div class="qrCodeGro">
+	     	<p>扫一扫，向我转入JM</p>
+	     	<img src="{$urel}" class="qr_img">
+
+	     </div>
+		 <div style="    margin-top: 15px;
+    font-size: 15px;
+    line-height: 20px;">如接受折现转让：
+			<p>·商家JM：可最高1:1</p>
+			<p>·消费JM：不低于50%，不高于70%，具体成交自行协商交易；</p>
+			<p>·违规交易出现的安全问题自行负责</p>
+		</div>
+	     <div class="intoButt" style="margin-top: 2rem;">
+	     	<a href="{:U('Growth/Introrecords')}">转入记录</a>
+	     </div>
+	     
+	   </div>
+</body>
+
+</html>
